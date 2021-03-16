@@ -40,3 +40,13 @@ Element.create category: 'h2', name: 'Subtitle', value: "Watch my video!", secti
 Element.create category: 'video', name: 'Profile Video', value: 'https://www.youtube.com/watch?v=TTemFSm_KIU', section: catchy_info
 
 
+price_info = Section.create( name: 'pricing', order: 4)
+Element.create category: "h1", name: "Title", value: "Pricing", section: price_info
+Element.create category: "h2", name: "teaser", value: "Book 10+ hours and get 5% off", section: price_info
+Element.create category: "p", name: "policy", value: "Group classes are for a max of 2 students ", section: price_info
+Element.create category: "product", name: "Product", value: "{type: 'one 2 one', offline_price: '20 Eur', online_price: '10 Eur' }", section: price_info
+Element.create category: "product", name: "Product", value: "{type: 'group', offline_price: '20 Eur', online_price: '10 Eur' }", section: price_info
+Element.create category: "product", name: "Product", value: "{type: 'Business', offline_price: '30 Eur', online_price: '20 Eur' }", section: price_info
+
+
+puts "done"
