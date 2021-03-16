@@ -1,0 +1,23 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<% section.elements.find_by(category: :img) %>);">
+  <div class="container">
+    <h1><% section.elements.find_by(category: :h1).value %></h1>
+    <p><% section.elements.find_by(category: :p).value %></p>
+    <a class="btn btn-flat" href="#"><% section.elements.find_by(category: :a).value %></a>
+  </div>
+</div>
+section.elements.where(category: :list).each do |el|
+  <li> el.value </li>
+end
+
+<h2><% section.elements.find_by(category: :h2) %></h2>
+
+:list 
+
+
+sections / <index class="html erb">
+render "sections/#{section.name}", section: section </index>
+
+seed
+cathcy_info = Section.create name: "catchy_info"
+Element.create category: "list", name: "One", value: 
+
