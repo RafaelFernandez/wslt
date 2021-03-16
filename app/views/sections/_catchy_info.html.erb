@@ -1,0 +1,11 @@
+<div>
+  <h2> <%= section.elements.find_by(category: :h2).value %> </h2>
+
+  <video src="<%= section.elements.find_by(category: :video).value %>"></video>
+  
+  <ul>
+    <% section.elements.where(category: :list).each do |el| %>
+      <li> <%= el.value %> </li>
+    <% end %>
+  </ul>
+</div>
