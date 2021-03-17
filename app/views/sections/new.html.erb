@@ -3,6 +3,7 @@
   <div class="container col-12 col-md-6 mr-0">
     <div class="flat-form">
       <h1>Create Hero Section</h1>
+      <h2>Form below is rendered with dynamic info (except at the moment the section is set as bio in the controller)</h2>
       <div class="mt-3">
         
         <%= render "sections/form_#{@section.name}", section: @section %>
@@ -15,4 +16,9 @@
     </div>
   </div>
 
+</div>
+<div class="container">
+  <h1>This should be the bio section</h1>
+  <h2>Form here is rendered with hard coded form</h2>
+  <%= render "sections/form_bio", section: @section %>
 </div>
