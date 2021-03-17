@@ -1,0 +1,10 @@
+<%= simple_form_for @section do |m| %>
+  <% i = 0 %>
+  <%= m.simple_fields_for :elements do |p| %>
+    <%= p.input :name, as: :hidden, input_html: { value: @section.elements[i].name } %>
+    <%= p.input :value, label: @section.elements[i].name %>
+    <%= p.input :category, as: :hidden, input_html: { value: @section.elements[i].category } %>
+
+    <% i += 1 %>
+  <% end %>
+<% end %>
