@@ -7,7 +7,7 @@ class SectionsController < ApplicationController
 
 
   def new
-    @section = Section.new(name: "hero")
+    @section = Section.new(name: params[:section])
     @section.elements.build(@section.get_elements)
   end
 
