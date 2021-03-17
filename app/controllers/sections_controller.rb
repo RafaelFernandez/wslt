@@ -5,7 +5,6 @@ class SectionsController < ApplicationController
     @sections = Section.order(:order)
   end
 
-
   def new
     @section = Section.new(name: params[:section])
     @section.elements.build(@section.get_elements)
