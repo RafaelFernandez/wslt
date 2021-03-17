@@ -17,5 +17,13 @@ SECTION_CONFIG = {
     {name: '', category: :list},
     {name: 'Subtitle', category: :h2},
     {name: 'Profile Video', category: :video}
-  ]
+  ],
+  pricing: [
+    {name: 'Title', category: :h1},
+    {name: 'Teaser', category: :h2},
+    {name: 'Policy', category: :p},
+    {name: 'Product', category: :product},
+    {name: 'Product', category: :product},
+    {name: 'Product', category: :product}
+  ],
 }
