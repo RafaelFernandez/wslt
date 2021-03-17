@@ -17,5 +17,12 @@ SECTION_CONFIG = {
     {name: '', category: :list},
     {name: 'Subtitle', category: :h2},
     {name: 'Profile Video', category: :video}
-  ]
+  ],
+  calendar: [
+    {name: 'headline', category: :p},
+    {name: 'sub-headline', category: :p},
+    {name: 'key-points', category: :p},
+    {name: 'button-text', category: :p},
+    {name: 'calendly-link', category: :link},
+  ],
 }
