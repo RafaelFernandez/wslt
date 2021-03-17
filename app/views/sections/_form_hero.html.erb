@@ -1,10 +1,18 @@
 <%= simple_form_for @section do |m| %>
-  <% i = 0 %>
+  
   <%= m.simple_fields_for :elements do |p| %>
-    <%= p.input :name, as: :hidden, input_html: { value: @section.elements[i].name } %>
-    <%= p.input :value, label: @section.elements[i].name %>
-    <%= p.input :category, as: :hidden, input_html: { value: @section.elements[i].category } %>
+    <%= p.input :name, as: :hidden, input_html: { value: @section.elements[p.index].name } %>
+    <%= p.input :category, as: :hidden, input_html: { value: @section.elements[p.index].category } %>
 
-    <% i += 1 %>
-  <% end %>
+      <% if @section.elements[p.index].name == "Image" %>
+        <div class="d-flex justify-content-between">
+          <%= p.input :value, as: :file, input_html: { class: 'hidden', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+          <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+        </div>
+      <% else %>
+        <%= p.input :value, label: @section.elements[p.index].name %>
+      <% end %>
+
+    <% end %>
+    <%= m.button :submit, "Add my Section", class: "btn btn-warning btn-lg btn-block rounded-pill mb-5 shadow" %>
 <% end %>
