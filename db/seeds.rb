@@ -49,3 +49,6 @@ Element.create category: "p", name: "button-text", value: "View my calendar", se
 Element.create category: 'link', name: 'calendly-link', value: 'https://calendly.com/popjen/15min', section: calendar
 
 puts "done"
+
+Theme.create(name: 'default')
+Theme.create(name: 'dudu')
