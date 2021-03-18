@@ -11,16 +11,16 @@ class SectionsController < ApplicationController
   end
 
   def create
-    @section = Section.new()
+    @section = Section.new(section_params)
     # @section.user = current_user
     if @section.save
-      redirect_to section_path(@section)
+      redirect_to websites_builder_path
     else
       render :new
     end
   end
 
   def section_params
-    # params.require(:section).permit(:)
+    params.require(:section).permit(:name, elements_attributes: [:name, :value, :category])
   end
 end

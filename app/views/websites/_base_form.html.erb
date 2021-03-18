@@ -11,5 +11,6 @@
       <%= p.input :value, label: section.elements[p.index].name %>
     <% end %>
   <% end %>
+  <%= m.input :name, as: :hidden, input_html: {value: section.name} %>
   <%= m.button :submit, class: 'btn-primary' %>
 <% end %>
