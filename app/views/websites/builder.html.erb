@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="card">
+    <h1>Create Hero Section</h1>
+    <%= render "websites/base_form", section: @section_hero %>
+  </div>
+
+  <div class="card">
+    <h2>Create Bio Section</h2>
+    <%= render "websites/base_form", section: @section_bio %>
+  </div>
+
+  <div class="card">
+    <h2>Create Catchy Info Section</h2>
+    <%= render "websites/base_form", section: @section_catchy %>
+  </div>
+
+  <div class="card">
+    <h2>Pricing Info</h2>
+    <%= simple_form_for @section_pricing do |m| %>
+      <%= m.simple_fields_for :elements do |p| %>
+        <%= p.input :name, as: :hidden, input_html: { value: @section_pricing.elements[p.index].name } %>
+        <%= p.input :category, as: :hidden, input_html: { value: @section_pricing.elements[p.index].category } %>
+        <% if @section_pricing.elements[p.index].category == "product" %>
+          <%= p.input :value, as: :product, position: p.index %>
+        <% else %>
+          <%= p.input :value, label: @section_pricing.elements[p.index].name %>
+        <% end %>
+      <% end %>
+      <%= m.button :submit, class: 'btn-primary' %>
+    <% end %>
+  </div>
+</div>
