@@ -31,6 +31,7 @@ bio_greeting = Element.create(category: 'h2', name: 'Greeting', value: 'Hi! Im R
 bio_tell_us_about_yourself = Element.create(category: 'p', name: "Tell us about yourself, sell why you are a great teacher and help your student's achieve their goals", value: 'I have been teaching for 10 years and guide students to achieve their own goals', section: bio)
 bio_upload_a_profile_picture = Element.create(category: 'img', name: 'Upload a profile picture', value: 'https://avatars3.githubusercontent.com/u/4753571?v=4', section: bio)
 
+# PRICING SECTION
 price_info = Section.create( name: 'pricing', order: 4)
 Element.create category: "h1", name: "Title", value: "Pricing", section: price_info
 Element.create category: "h2", name: "teaser", value: "Book 10+ hours and get 5% off", section: price_info
@@ -39,6 +40,13 @@ Element.create category: "product", name: "Product", value: "{type: 'one 2 one',
 Element.create category: "product", name: "Product", value: "{type: 'group', offline_price: '20 Eur', online_price: '10 Eur' }", section: price_info
 Element.create category: "product", name: "Product", value: "{type: 'Business', offline_price: '30 Eur', online_price: '20 Eur' }", section: price_info
 
+# CALENDAR SECTION
+calendar = Section.create( name: 'calendar', order: 5)
+Element.create category: "p", name: "headline", value: "LET'S TALK!", section: calendar
+Element.create category: "p", name: "sub-headline", value: "I speak English, Spanish and French", section: calendar
+Element.create category: "p", name: "key-points", value: "Book a time for us to talk, -Assess your level of English, -Set your learning goals", section: calendar
+Element.create category: "p", name: "button-text", value: "View my calendar", section: calendar
+Element.create category: 'link', name: 'calendly-link', value: 'https://calendly.com/popjen/15min', section: calendar
 
 puts "done"
 
