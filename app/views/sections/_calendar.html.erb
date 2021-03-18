@@ -1,0 +1,9 @@
+<div class="container mb-3">
+<h1>calendar section</h1>
+  
+  <h2><%= section.elements.find_by(name: "headline").value %></h1>
+  <h3><%= section.elements.find_by(name: "sub-headline").value %></h3>
+  <p><%= section.elements.find_by(name: "key-points").value %></p>
+  <p><%= section.elements.find_by(name: "button-text").value %></p>
+  <a href="<%= section.elements.find_by(name: 'calendly-link').value %>"><%= section.elements.find_by(name: 'calendly-link').value %></a> 
+</div>
