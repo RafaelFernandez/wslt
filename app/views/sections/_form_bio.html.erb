@@ -1,7 +1,2 @@
-<%= simple_form_for @section do |m| %>
-    <%= m.simple_fields_for :elements do |p| %>
-    <%= p.input :name, as: :hidden, input_html: { value: @section.elements[p.index].name } %>
-    <%= p.input :value, label: @section.elements[p.index].name %>
-    <%= p.input :category, as: :hidden, input_html: { value: @section.elements[p.index].category } %>
-  <% end %>
-<% end %>
+<h1>Create Bio Section</h1>
+<%= render "sections/base_form", section: section %>

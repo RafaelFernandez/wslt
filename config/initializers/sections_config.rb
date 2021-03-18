@@ -25,4 +25,12 @@ SECTION_CONFIG = {
     {name: 'button-text', category: :p},
     {name: 'calendly-link', category: :link},
   ],
+  pricing: [
+    {name: 'Title', category: :h1},
+    {name: 'Teaser', category: :h2},
+    {name: 'Policy', category: :p},
+    {name: 'Product', category: :product},
+    {name: 'Product', category: :product},
+    {name: 'Product', category: :product}
+  ]
 }
