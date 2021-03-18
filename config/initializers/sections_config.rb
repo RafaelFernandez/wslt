@@ -18,6 +18,13 @@ SECTION_CONFIG = {
     {name: 'Subtitle', category: :h2},
     {name: 'Profile Video', category: :video}
   ],
+  calendar: [
+    {name: 'headline', category: :p},
+    {name: 'sub-headline', category: :p},
+    {name: 'key-points', category: :p},
+    {name: 'button-text', category: :p},
+    {name: 'calendly-link', category: :link},
+  ],
   pricing: [
     {name: 'Title', category: :h1},
     {name: 'Teaser', category: :h2},
@@ -25,5 +32,5 @@ SECTION_CONFIG = {
     {name: 'Product', category: :product},
     {name: 'Product', category: :product},
     {name: 'Product', category: :product}
-  ],
+  ]
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_16_140502) do
+ActiveRecord::Schema.define(version: 2021_03_18_165106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,12 +32,6 @@ ActiveRecord::Schema.define(version: 2021_03_16_140502) do
     t.integer "order"
   end
 
-  create_table "templates", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "testimonials", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -46,6 +40,12 @@ ActiveRecord::Schema.define(version: 2021_03_16_140502) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["website_id"], name: "index_testimonials_on_website_id"
+  end
+
+  create_table "themes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,10 +75,10 @@ ActiveRecord::Schema.define(version: 2021_03_16_140502) do
     t.string "name"
     t.string "domain"
     t.bigint "user_id", null: false
-    t.bigint "template_id", null: false
+    t.bigint "theme_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["template_id"], name: "index_websites_on_template_id"
+    t.index ["theme_id"], name: "index_websites_on_theme_id"
     t.index ["user_id"], name: "index_websites_on_user_id"
   end
 
@@ -86,6 +86,6 @@ ActiveRecord::Schema.define(version: 2021_03_16_140502) do
   add_foreign_key "testimonials", "websites"
   add_foreign_key "website_sections", "sections"
   add_foreign_key "website_sections", "websites"
-  add_foreign_key "websites", "templates"
+  add_foreign_key "websites", "themes"
   add_foreign_key "websites", "users"
 end
