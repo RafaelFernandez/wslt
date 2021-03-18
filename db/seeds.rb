@@ -41,3 +41,6 @@ Element.create category: "product", name: "Product", value: "{type: 'Business', 
 
 
 puts "done"
+
+Theme.create(name: 'default')
+Theme.create(name: 'dudu')
