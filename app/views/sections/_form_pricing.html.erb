@@ -1,11 +1,11 @@
-<%= simple_form_for section do |m| %>
+<%= simple_form_for [website, section] do |m| %>
   <%= m.simple_fields_for :elements do |p| %>
     <%= p.input :name, as: :hidden, input_html: { value: section.elements[p.index].name } %>
     <%= p.input :category, as: :hidden, input_html: { value: section.elements[p.index].category } %>
-    <% if @section.elements[p.index].category == "product" %>
+    <% if section.elements[p.index].category == "product" %>
       <%= p.input :value, as: :product, position: p.index %>
     <% else %>
-      <%= p.input :value, label: @section.elements[p.index].name %>
+      <%= p.input :value, label: section.elements[p.index].name %>
     <% end %>
   <% end %>
   <%= m.button :submit, class: 'btn-primary' %>

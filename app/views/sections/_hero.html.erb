@@ -1,4 +1,4 @@
-<div class="banner" data-preview-image style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path section&.elements&.find_by(category: :img)&.photo&.key %>);">
+<div class="banner" data-preview-image style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path section&.elements&.find_by(category: :img)&.photo&.key || ''%>);">
   <div class="container">
     <h1 data-preview-title><%= section&.elements&.find_by(category: :h1)&.value %></h1>
     <p data-preview-subtitle><%= section&.elements&.find_by(category: :p)&.value %></p>
