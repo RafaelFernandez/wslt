@@ -4,7 +4,7 @@
     <%= p.input :category, as: :hidden, input_html: { value: section.elements[p.index].category } %>
     <% if section.elements[p.index].category == "img" %>
       <div class="d-flex justify-content-between" data-controller="upload">
-        <%= p.input :value, as: :file, input_html: { class: 'hidden', id: 'photo-input', data: {action: 'change->upload#displayPreview'} }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+        <%= p.input :photo, as: :file, input_html: { class: 'hidden', id: 'photo-input', data: {action: 'change->upload#displayPreview'} }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
         <%= image_tag "", width: 300, class: "hidden", id: "photo-preview", data: {target: 'upload.image'} %>
       </div>
     <% else %>

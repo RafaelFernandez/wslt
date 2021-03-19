@@ -21,6 +21,6 @@ class SectionsController < ApplicationController
   end
 
   def section_params
-    params.require(:section).permit(:name, elements_attributes: [:name, :value, :category])
+    params.require(:section).permit(:name, elements_attributes: [:name, :value, :category, :photo])
   end
 end
