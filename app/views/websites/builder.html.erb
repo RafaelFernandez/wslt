@@ -1,54 +1,93 @@
-<div class="container p-3">
-  <div class="row">
-    <div class="col">
+<div class="row col-12 col-md-12">
+  <div class="container col-12 col-md-6 mr-0" data-controller="addsection">
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Add New Section
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Please Select a Section</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body text-center">
+            <a href="#" data-action="click->addsection#addHero" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Hero Section</a>
+            <a href="#" data-action="click->addsection#addBio" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Bio Section</a>
+            <hr>
+            <a href="#" data-action="click->addsection#addCatchy" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Catchy Section</a>
+            <a href="#" data-action="click->addsection#addPricing" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Pricing Section</a>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="accordion">
-  <%# first card   %>
-      <div class="card">
-        <div class="card-header hero" id="headingOne">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-            <h5>Create Hero Section</h5>
-            </button>
-          </h5>
-        </div>
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-          <div class="card-body">
-            <%= render "websites/base_form", section: @section_hero %>
+    <%# first card   %>
+        <div class="card is-hidden" data-addsection-target="card_hero" data-name="hero">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              <h5>Create Hero Section</h5>
+              </button>
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+
+              <%= render "websites/base_form", section: @section_hero %>
+            </div>
           </div>
         </div>
-      </div>
-  <%# second card %>
-      <div class="card">
-        <div class="card-header" id="headingTwo">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            <h5>Create Bio Section</h5>
-            </button>
-          </h5>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-          <div class="card-body">
-            <%= render "websites/base_form", section: @section_bio %>
+
+    <%# second card %>
+        <div class="card is-hidden" data-addsection-target="card_bio" data-name="bio">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <h5>Create Bio Section</h5>
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+
+              <%= render "websites/base_form", section: @section_bio %>
+            </div>
           </div>
         </div>
-      </div>
-  <%# third card   %>
-      <div class="card">
-        <div class="card-header" id="headingThree">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              <h5>Create Catchy Info Section</h5>
-            </button>
-          </h5>
-        </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-          <div class="card-body">
-              <%= render "websites/base_form", section: @section_catchy %>
+
+    <%# third card   %>
+        <div class="card is-hidden" data-addsection-target="card_catchy" data-name="catchy">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <h5>Create Catchy Info Section</h5>
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+
+
+                <%= render "websites/base_form", section: @section_catchy %>
+
+            </div>
           </div>
         </div>
-      </div>
-  <%# fourth card %>
-      <div class="card">
+
+    <%# fourth card %>
+      <div class="card is-hidden" data-addsection-target="card_pricing" data-name="pricing">
         <div class="card-header" id="headingFour">
           <h5 class="mb-0">
             <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -74,9 +113,10 @@
         </div>
       </div>
     </div>
-  
-    </div>
-    <div class="col">
+
+  </div>
+  <div class="container col-12 col-md-6 mr-0">
+     <div class="col">
       <p>right hand side - should show preview in divs here...🙏🏻</p>
       <div>
         <%= render "websites/preview" %>
