@@ -1,22 +1,32 @@
 Website.destroy_all
 Element.destroy_all
 Section.destroy_all
+Website.destroy_all
 Theme.destroy_all
 User.destroy_all
 
-
-
 user = User.create(first_name: 'John', last_name: 'Doe', email: 'j@gmail.com', password: 'password')
-theme = Theme.create(name: 'default')
+
 Theme.create(name: 'dudu')
+# Theme.create(name: 'default')
+kids = Theme.create(name: 'kids')
+
+poppy = User.create!(email: "poppy@poppyworld.com", password: "password", first_name: "Poppy", last_name: "World")
+
+poppysworld = Website.create!(
+  name: "Poppy's World", 
+  domain: "englishlanguageteacher.com",
+  user: poppy, theme: kids
+)
 
 # Website 
-website = Website.create(user: user, theme: theme, name: 'My web', domain: 'englishlanguageteacher.com')
+website = Website.create(user: user, theme: kids, name: 'My web', domain: 'englishlanguageteacher.com')
 # HERO SECTION
-hero = Section.create( name: 'hero', order: 1, website: website)
-Element.create(name: 'Title', value: 'This is the h1', category: :h1, section: hero)
-Element.create(name: 'Subtitle', value: 'This is the paragraph', category: :p, section: hero)
-Element.create(name: 'Background', value: '', category: :img, section: hero)
+hero = Section.create( name: 'hero', order: 1, website: poppysworld)
+Element.create(name: 'Title', value: 'RACHEL POTTER', category: :h1, section: hero)
+Element.create(name: 'Subtitle', value: 'Qualified English language teacher', category: :p, section: hero)
+Element.create(name: 'Text', value: 'Helping young learners reach fluency through intuative learning and games', category: :p, section: hero)
+Element.create(name: 'Background', value: 'https://cdn.pixabay.com/photo/2018/01/17/07/06/laptop-3087585_1280.jpg', category: :img, section: hero)
 
 # CATCHY INFO SECTION
 catchy_info = Section.create name: 'catchy_info', order: 3, website: website
@@ -53,3 +63,18 @@ Element.create category: 'link', name: 'calendly-link', value: 'https://calendly
 
 puts "done"
 
+# WebsiteSection.create!(
+#   website: poppysworld, section: hero
+# )
+
+# WebsiteSection.create!(
+#   website: poppysworld, section: bio
+# )
+
+# WebsiteSection.create!(
+#   website: poppysworld, section: catchy_info
+# )
+
+# WebsiteSection.create!(
+#   website: poppysworld, section: price_info
+# )

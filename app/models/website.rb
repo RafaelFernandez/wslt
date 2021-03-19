@@ -7,4 +7,8 @@ class Website < ApplicationRecord
   has_many :testimonials, dependent: :destroy
   has_many :sections, dependent: :destroy
   validates :domain, inclusion: { in: DOMAIN_OPTIONS }
+
+  def section_named(name)
+    sections&.find_by(name: name)
+  end
 end
