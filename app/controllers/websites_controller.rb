@@ -10,13 +10,14 @@ class WebsitesController < ApplicationController
     @website = Website.new(website_params)
     @website.user = current_user
     if @website.save
-      redirect_to section_path(@section)
+      redirect_to website_builder_path(@website)
     else
       render :new
     end
   end
   
   def builder
+    @sections = Website.find(params[:website_id]).sections
     @section_hero = Section.new(name: "hero")
     @section_bio = Section.new(name: "bio")
     @section_catchy = Section.new(name: "catchy_info")
