@@ -1,13 +1,21 @@
 Element.destroy_all
+WebsiteSection.destroy_all
 Section.destroy_all
+Website.destroy_all
+Theme.destroy_all
+User.destroy_all
 
 # HERO SECTION
 hero = Section.create( name: 'hero', order: 1)
-hero_title = Element.new(name: 'Title', value: 'This is the h1', category: :h1)
+hero_title = Element.new(name: 'Title', value: 'RACHEL POTTER', category: :h1)
 hero_title.section = hero
 hero_title.save!
 
-hero_subtitle = Element.new(name: 'Subtitle', value: 'This is the paragraph', category: :p)
+hero_subtitle = Element.new(name: 'Subtitle', value: 'Qualified English language teacher', category: :p)
+hero_subtitle.section = hero
+hero_subtitle.save!
+
+hero_subtitle = Element.new(name: 'Text', value: 'Helping young learners reach fluency through intuative learning and games', category: :p)
 hero_subtitle.section = hero
 hero_subtitle.save!
 
@@ -51,4 +59,27 @@ Element.create category: 'link', name: 'calendly-link', value: 'https://calendly
 puts "done"
 
 Theme.create(name: 'default')
-Theme.create(name: 'dudu')
+kids = Theme.create(name: 'kids')
+
+poppy = User.create!(email: "poppy@poppyworld.com", password: "password", first_name: "Poppy", last_name: "World")
+
+poppysworld = Website.create!(
+  name: "Poppy's World", 
+  domain: "englishlanguageteacher.com",
+  user: poppy, theme: kids)
+
+  WebsiteSection.create!(
+    website: poppysworld, section: hero
+  )
+
+  WebsiteSection.create!(
+    website: poppysworld, section: bio
+  )
+
+  WebsiteSection.create!(
+    website: poppysworld, section: catchy_info
+  )
+
+  WebsiteSection.create!(
+    website: poppysworld, section: price_info
+  )

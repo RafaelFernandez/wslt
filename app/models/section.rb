@@ -8,4 +8,8 @@ class Section < ApplicationRecord
   def get_elements
     SECTION_CONFIG[self.name.to_sym]
   end
+
+  def element_named(name) 
+    elements&.find_by(name: name).value
+  end
 end

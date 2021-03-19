@@ -29,9 +29,14 @@ class WebsitesController < ApplicationController
     @section_pricing.elements.build(@section_pricing.get_elements)
   end
 
+  def show
+    @website = Website.find(params[:id])
+    # raise
+    render layout: @website.theme.name
+  end
+
 private
   def website_params
     params.require(:website).permit(:name, :domain, :theme_id)
   end
 end
-

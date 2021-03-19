@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @website.name %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+  </head>
+
+  <body class="kids-template">
+<%# HERO %>
+<%# BANNER %>
+    <div class="banner" style="background-image: url(<%= @website.section_named('hero').element_named('Background') %>")>
+      <h1><%= @website.section_named("hero").element_named("Title") %></h1>
+      <h2><%= @website.section_named("hero").element_named("Subtitle") %></h2>
+      <p><%= @website.section_named("hero").element_named("Text") %></p>
+    </div>
+<%# BIO %>
+    <div class="bio">
+      <%= @website.section_named("bio").element_named("Greeting") %>
+      <%= @website.section_named("bio").element_named("Tell us about yourself, sell why you are a great teacher and help your student's achieve their goals") %>
+      <%= @website.section_named("bio").element_named("Upload a profile picture") %>
+    </div>
+<%# CATCHY_INFO %>
+    <div class="catchy_info">
+      <%= @website.section_named("catchy_info").element_named("One") %>
+      <%= @website.section_named("catchy_info").element_named("Two") %>
+      <%= @website.section_named("catchy_info").element_named("Three") %>
+      <%= @website.section_named("catchy_info").element_named("Four") %>
+      <%= @website.section_named("catchy_info").element_named("Five") %>
+      <%= @website.section_named("catchy_info").element_named("Subtitle") %>
+      <%= @website.section_named("catchy_info").element_named("Profile Video") %>
+  </body>
+</html>

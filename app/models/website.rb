@@ -9,4 +9,7 @@ class Website < ApplicationRecord
   has_many :sections, through: :website_sections
   validates :domain, inclusion: { in: DOMAIN_OPTIONS }
 
+  def section_named(name)
+    sections&.find_by(name: name)
+  end
 end
