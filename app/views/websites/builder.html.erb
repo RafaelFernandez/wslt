@@ -1,32 +1,86 @@
-<div class="container">
-  <div class="card">
-    <h1>Create Hero Section</h1>
-    <%= render "websites/base_form", section: @section_hero %>
-  </div>
-
-  <div class="card">
-    <h2>Create Bio Section</h2>
-    <%= render "websites/base_form", section: @section_bio %>
-  </div>
-
-  <div class="card">
-    <h2>Create Catchy Info Section</h2>
-    <%= render "websites/base_form", section: @section_catchy %>
-  </div>
-
-  <div class="card">
-    <h2>Pricing Info</h2>
-    <%= simple_form_for @section_pricing do |m| %>
-      <%= m.simple_fields_for :elements do |p| %>
-        <%= p.input :name, as: :hidden, input_html: { value: @section_pricing.elements[p.index].name } %>
-        <%= p.input :category, as: :hidden, input_html: { value: @section_pricing.elements[p.index].category } %>
-        <% if @section_pricing.elements[p.index].category == "product" %>
-          <%= p.input :value, as: :product, position: p.index %>
-        <% else %>
-          <%= p.input :value, label: @section_pricing.elements[p.index].name %>
-        <% end %>
-      <% end %>
-      <%= m.button :submit, class: 'btn-primary' %>
-    <% end %>
+<div class="container p-3">
+  <div class="row">
+    <div class="col">
+    <div id="accordion">
+  <%# first card   %>
+      <div class="card">
+        <div class="card-header hero" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <h5>Create Hero Section</h5>
+            </button>
+          </h5>
+        </div>
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <%= render "websites/base_form", section: @section_hero %>
+          </div>
+        </div>
+      </div>
+  <%# second card %>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <h5>Create Bio Section</h5>
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            <%= render "websites/base_form", section: @section_bio %>
+          </div>
+        </div>
+      </div>
+  <%# third card   %>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <h5>Create Catchy Info Section</h5>
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+              <%= render "websites/base_form", section: @section_catchy %>
+          </div>
+        </div>
+      </div>
+  <%# fourth card %>
+      <div class="card">
+        <div class="card-header" id="headingFour">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              <h5>Pricing Info</h5>
+            </button>
+          </h5>
+        </div>
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+          <div class="card-body">
+            <%= simple_form_for @section_pricing do |m| %>
+              <%= m.simple_fields_for :elements do |p| %>
+                <%= p.input :name, as: :hidden, input_html: { value: @section_pricing.elements[p.index].name } %>
+                <%= p.input :category, as: :hidden, input_html: { value: @section_pricing.elements[p.index].category } %>
+                <% if @section_pricing.elements[p.index].category == "product" %>
+                  <%= p.input :value, as: :product, position: p.index %>
+                <% else %>
+                  <%= p.input :value, label: @section_pricing.elements[p.index].name %>
+                <% end %>
+              <% end %>
+              <%= m.button :submit, class: 'btn-primary' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    </div>
+    <div class="col">
+      <p>right hand side - should show preview in divs here...🙏🏻</p>
+      <div>
+        <%= render "websites/preview" %>
+      </div>
+    </div>
   </div>
 </div>
