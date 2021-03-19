@@ -1,7 +1,6 @@
 class Section < ApplicationRecord
-  has_many :website_sections
-  has_many :websites, through: :website_sections
-  has_many :elements
+  belongs_to :website
+  has_many :elements, dependent: :destroy
 
   accepts_nested_attributes_for :elements
 

@@ -33,8 +33,8 @@
     </div>
 
     <div id="accordion">
-    <%# first card   %>
-        <div class="card is-hidden" data-addsection-target="card_hero" data-name="hero">
+    <%# first card   %> 
+        <div class="card <%= 'is-hidden' if @section_hero.id.nil? %> " data-addsection-target="card_hero" data-name="hero">
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
               <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -44,8 +44,7 @@
           </div>
           <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
-
-              <%= render "websites/base_form", section: @section_hero %>
+              <%= render "sections/base_form", section: @section_hero, website: @website %>
             </div>
           </div>
         </div>
@@ -61,8 +60,7 @@
           </div>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
             <div class="card-body">
-
-              <%= render "websites/base_form", section: @section_bio %>
+              <%= render "sections/base_form", section: @section_bio, website: @website %>
             </div>
           </div>
         </div>
@@ -78,10 +76,7 @@
           </div>
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
             <div class="card-body">
-
-
-                <%= render "websites/base_form", section: @section_catchy %>
-
+              <%= render "sections/base_form", section: @section_catchy, website: @website %>
             </div>
           </div>
         </div>
@@ -97,18 +92,8 @@
         </div>
         <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
           <div class="card-body">
-            <%= simple_form_for @section_pricing do |m| %>
-              <%= m.simple_fields_for :elements do |p| %>
-                <%= p.input :name, as: :hidden, input_html: { value: @section_pricing.elements[p.index].name } %>
-                <%= p.input :category, as: :hidden, input_html: { value: @section_pricing.elements[p.index].category } %>
-                <% if @section_pricing.elements[p.index].category == "product" %>
-                  <%= p.input :value, as: :product, position: p.index %>
-                <% else %>
-                  <%= p.input :value, label: @section_pricing.elements[p.index].name %>
-                <% end %>
-              <% end %>
-              <%= m.button :submit, class: 'btn-primary' %>
-            <% end %>
+            <%= render "sections/form_pricing", section: @section_pricing, website: @website %>
+
           </div>
         </div>
       </div>
