@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_18_165106) do
+ActiveRecord::Schema.define(version: 2021_03_19_143600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2021_03_18_165106) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "order"
+    t.bigint "website_id", null: false
+    t.index ["website_id"], name: "index_sections_on_website_id"
   end
 
   create_table "testimonials", force: :cascade do |t|
@@ -62,15 +64,6 @@ ActiveRecord::Schema.define(version: 2021_03_18_165106) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "website_sections", force: :cascade do |t|
-    t.bigint "website_id", null: false
-    t.bigint "section_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["section_id"], name: "index_website_sections_on_section_id"
-    t.index ["website_id"], name: "index_website_sections_on_website_id"
-  end
-
   create_table "websites", force: :cascade do |t|
     t.string "name"
     t.string "domain"
@@ -83,9 +76,8 @@ ActiveRecord::Schema.define(version: 2021_03_18_165106) do
   end
 
   add_foreign_key "elements", "sections"
+  add_foreign_key "sections", "websites"
   add_foreign_key "testimonials", "websites"
-  add_foreign_key "website_sections", "sections"
-  add_foreign_key "website_sections", "websites"
   add_foreign_key "websites", "themes"
   add_foreign_key "websites", "users"
 end
