@@ -1,20 +1,17 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
+  static targets = ['menu']
 
-  scrolling(event){
-    // const input = event.target
-    
-    $(window).on("scroll", function() {
-      if ($(window).scrollTop()) {
-        $('nav').addClass('black');
-      }
-    else {
-        $('nav').removeClass('black');
-      }
-    });
+  connect() {
+    window.addEventListener("scroll", this.onScroll)
+  }
 
-
-    
+  onScroll = (event) => {
+    if (window.scrollY) {
+      this.menuTarget.classList.add("dark")
+    } else {
+      this.menuTarget.classList.remove("dark")
+    }
   }
 }
