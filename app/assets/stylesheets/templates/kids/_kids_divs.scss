@@ -53,14 +53,16 @@
   }
 }
 
-.pricing-cards{
-
-}
-
 .pricing-bottom{
   p{
     font-family: 'Roboto';
     font-size: 18px;
     color: rgba(0, 0, 0, 0.6);
   }  
+}
+
+.product-cards{
+  margin: 30px auto 30px auto;
+  justify-content: space-between;
+  width: 80%;
 }

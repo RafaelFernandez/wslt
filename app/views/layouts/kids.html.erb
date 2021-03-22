@@ -25,7 +25,7 @@
         <h1><%= @website&.section_named("hero")&.element_named("Title") %></h1>
         <h2><%= @website&.section_named("hero")&.element_named("Subtitle") %></h2>
         <p><%= @website&.section_named("hero")&.element_named("Text") %></p>
-        <button type="button" class="btn yellow-curved">Let's talk!</button>
+        <a href="#" class="btn yellow-curved">Let's talk!</a>
       </div>
     
     </div>
@@ -49,7 +49,7 @@
 <%# CATCHY_INFO %>
     <div class="d-flex pt-5">
       <div class="catchy-info-left">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%#= section.elements.find_by(category: :video).youtube_vid_id() %>"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YAVj0p87jMo<%#= section.elements.find_by(category: :video).youtube_vid_id() %>"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <%#= @website&.section_named("catchy_info")&.element_named("Profile Video") %>
       </div>
       
@@ -69,40 +69,78 @@
     </div>
 
 <%# CALENDAR %>
-    <div class="calendar d-flex flex-column justify-content-center text-center pt-5">
+    <div class="calendar text-center pt-5">
     <%#= @website&.section_named("calendar")&.element_named("headline") %>
     <%#= @website&.section_named("calendar")&.element_named("sub-headline") %>
     <%#= @website&.section_named("calendar")&.element_named("keypoints") %>
-    <h2>LET'S TALK!</h2>
+    <h2>Let's talk!</h2>
     <p>I speak English, Spanish and French</p>
     <ul>
       <li>Book a time for us to talk</li>
       <li>Assess your level of English</li>
       <li>Set your learning goals</li>
     </ul>
-    <button type="button" class="btn yellow-curved"><a href="https://calendly.com/popjen/15min">View my calendar</a></button>
+    <a href="https://calendly.com/popjen/15min" class="btn yellow-curved">View my calendar</a>
     </div>
 
 <%#= PRICING %>
 
-      <div class="pricing-top calendar d-flex flex-column justify-content-center text-center pt-5">
+      <div class="pricing-top d-flex flex-column justify-content-center text-center pt-5">
         <%#= @website&.section_named("price_info")&.element_named("Title") %>
         <%#= @website&.section_named("price_info")&.element_named("teaser") %>
        
-        
         <h2>Pricing</h2>
         <h3>Book 10+ hours and get 5% off</h3>
       </div>
 
-      <div class="pricing-cards">
-      <%#= @website&.section_named("price_info")&.element_named("Product") ???????? how does this work???? value: "{type: 'one 2 one', offline_price: '20 Eur', online_price: '10 Eur' }" %>
-        <h4>One-to-one</h4>
-        <p>Online</p>
-        <h4>20€</h4>
+
+      <div class="product-cards d-flex">
+      
+<%#= FIRST PRODUCT ONE-TO-ONE CLASSES %>
+        <div class="product-card text-center">
+        <%#= @website&.section_named("price_info")&.element_named("Product") ???????? how does this work???? value: "{type: 'one 2 one', offline_price: '20 Eur', online_price: '10 Eur' }" %>
+          <h4>One-to-one</h4>
+            <div class="product-pricing d-flex justify-content-center">
+                <div class="hubbly-small-left d-flex justify-content-center">
+                  <div class="pricing-hubbly-content d-flex flex-column justify-content-center text-center">  
+                    <p>Online</p>
+                    <h4>15€</h4>
+                  </div>
+                </div>
+
+                <div class="hubbly-small-right d-flex justify-content-center">
+                  <div class="pricing-hubbly-content d-flex flex-column justify-content-center text-center">  
+                    <p>In person</p>
+                    <h4>25€</h4>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+<%#= SECOND PRODUCT EXAM PREP CLASSES %>
+        <div class="product-card text-center">
+        <%#= @website&.section_named("price_info")&.element_named("Product") ???????? how does this work???? value: "{type: 'one 2 one', offline_price: '20 Eur', online_price: '10 Eur' }" %>
+          <h4>Exam prep classes</h4>
+            <div class="product-pricing d-flex">
+                <div class="hubbly-small-left d-flex justify-content-center">
+                  <div class="pricing-hubbly-content d-flex flex-column justify-content-center text-center">  
+                    <p>Online</p>
+                    <h4>20€</h4>
+                  </div>
+                </div>
+
+                <div class="hubbly-small-right d-flex justify-content-center">
+                  <div class="pricing-hubbly-content d-flex flex-column justify-content-center text-center">  
+                    <p>In person</p>
+                    <h4>25€</h4>
+                  </div>
+                </div>
+            </div>
+        </div>
       </div>
 
       <div class="pricing-bottom text-center">
-      <%#= @website&.section_named("price_info")&.element_named("policy") %>
+      <%#= @website&.section_named("price_info")&.element_named("policy") %>           
         <p>Group classes are for a max of 2 students online and 6 students in person</p>
         <p>All prices are quoted per student per hour</p>
       </div>
