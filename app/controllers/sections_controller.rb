@@ -12,7 +12,7 @@ class SectionsController < ApplicationController
 
   def create
     @section = Section.new()
-    # @section.user = current_user
+
     if @section.save
       redirect_to section_path(@section)
     else
