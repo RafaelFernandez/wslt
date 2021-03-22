@@ -31,15 +31,12 @@
 
     <div id="accordion">
     <%# first card   %> 
-        <div class="card w-100 <%= 'is-hidden' if @section_hero.id.nil? %> " data-addsection-target="card_hero" data-name="hero">
-          <div class="card-header" id="headingOne">
-            <h4 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-              <h4>Hero</h4>
-              </button>
-            </h4>
-          </div>
-          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-form <%= 'is-hidden' if @section_hero.id.nil? %> " data-addsection-target="card_hero" data-name="hero">
+          <div class="card-header d-flex justify-content-between" id="headingHero">
+          <h4 class="font-weight-bold m-0"><%= @section_hero.name.capitalize %></h4>
+          <p class="collapsed" data-toggle="collapse" data-target=".collapseHero" aria-expanded="false" aria-controls="collapseHero"></p>
+          </div>  
+          <div class="collapseHero collapse" aria-labelledby="headingTwo" data-parent="#accordion">
             <div class="card-body">
               <%= render "sections/base_form", section: @section_hero, website: @website %>
             </div>
@@ -47,12 +44,12 @@
         </div>
 
     <%# second card %>
-        <div class="card-form is-hidden" data-addsection-target="card_bio" data-name="bio">
-          <div class="card-header d-flex justify-content-between" id="headingTwo">
-          <h4 class="font-weight-bold m-0">Bio</h4>
-          <p class="collapsed" data-toggle="collapse" data-target=".collapseBio" aria-expanded="false" aria-controls="collapseBio"></p>
+        <div class="card-form <%= 'is-hidden' if @section_bio.id.nil? %>" data-addsection-target="card_bio" data-name="bio">
+          <div class="card-header d-flex justify-content-between" id="headingBio">
+            <h4 class="font-weight-bold m-0"><%= @section_bio.name.capitalize %></h4>
+            <p class="collapsed" data-toggle="collapse" data-target=".collapseBio" aria-expanded="false" aria-controls="collapseBio"></p>
           </div>  
-          <div class="collapseBio collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="collapseBio collapse" aria-labelledby="headingBio" data-parent="#accordion">
             <div class="card-body">
               <%= render "sections/base_form", section: @section_bio, website: @website %>
             </div>
@@ -60,15 +57,12 @@
         </div>
 
     <%# third card   %>
-        <div class="card is-hidden" data-addsection-target="card_catchy" data-name="catchy">
-          <div class="card-header" id="headingThree">
-            <h4 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                <h4>Info about you</h4>
-              </button>
-            </h4>
-          </div>
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+        <div class="card-form <%= 'is-hidden' if @section_catchy.id.nil? %>" data-addsection-target="card_catchy" data-name="catchy">
+          <div class="card-header d-flex justify-content-between" id="headingCatchy">
+            <h4 class="font-weight-bold m-0"><%= @section_catchy.name.capitalize %></h4>
+            <p class="collapsed" data-toggle="collapse" data-target=".collapseCatchy" aria-expanded="false" aria-controls="collapseCatchy"></p>
+          </div>  
+          <div class="collapseCatchy collapse" aria-labelledby="headingCatchy" data-parent="#accordion">
             <div class="card-body">
               <%= render "sections/base_form", section: @section_catchy, website: @website %>
             </div>
@@ -76,15 +70,12 @@
         </div>
 
     <%# fourth card %>
-      <div class="card is-hidden" data-addsection-target="card_pricing" data-name="pricing">
-        <div class="card-header" id="headingFour">
-          <h4 class="mb-0">
-            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              <h4>Pricing Info</h4>
-            </button>
-          </h4>
+      <div class="card-form <%= 'is-hidden' if @section_pricing.id.nil? %>" data-addsection-target="card_pricing" data-name="pricing">
+        <div class="card-header d-flex justify-content-between" id="headingPricing">
+          <h4 class="font-weight-bold m-0"><%= @section_pricing.name.capitalize %></h4>
+          <p class="collapsed" data-toggle="collapse" data-target=".collapsePricing" aria-expanded="false" aria-controls="collapsePricing"></p>
         </div>
-        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+        <div class="collapsePricing collapse" aria-labelledby="headingPricing" data-parent="#accordion">
           <div class="card-body">
             <%= render "sections/form_pricing", section: @section_pricing, website: @website %>
 

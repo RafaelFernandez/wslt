@@ -11,10 +11,10 @@ SECTION_CONFIG = {
   ],
   catchy_info: [
     {name: 'Tell us 5 interesting things', category: :list},
-    {name: '', category: :list},
-    {name: '', category: :list},
-    {name: '', category: :list},
-    {name: '', category: :list},
+    {name: ' ', category: :list},
+    {name: ' ', category: :list},
+    {name: ' ', category: :list},
+    {name: ' ', category: :list},
     {name: 'Video title', category: :h2},
     {name: 'Upload an intro video', category: :video}
   ],
