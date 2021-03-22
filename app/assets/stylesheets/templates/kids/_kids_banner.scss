@@ -1,0 +1,43 @@
+.kids-template {
+  header {
+  }
+
+  .overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width:100%;
+    background-color: black;
+    opacity: 0.3;
+    z-index: 1;
+  }
+  
+  .kids_banner {
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
+    
+    
+    h1 {
+      font-family: roboto;
+      font-size: 75px;
+      z-index: 5;
+      color: white;
+    }
+
+    h2 {
+      font-family: roboto;
+      font-size: 32px;
+      z-index: 5;
+      color: white;
+    }
+
+    p {
+      font-family: 'Caveat', cursive;
+      font-size: 32px;
+      z-index: 5;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}

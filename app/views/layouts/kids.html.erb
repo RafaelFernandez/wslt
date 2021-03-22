@@ -12,27 +12,101 @@
   </head>
 
   <body class="kids-template">
-<%# HERO %>
+
+<%# HEADER HERO-SECTION %>
 <%# BANNER %>
-    <div class="banner" style="background-image: url(<%= @website&.section_named('hero')&.element_named('Background') %>")>
-      <h1><%= @website&.section_named("hero")&.element_named("Title") %></h1>
-      <h2><%= @website&.section_named("hero")&.element_named("Subtitle") %></h2>
-      <p><%= @website&.section_named("hero")&.element_named("Text") %></p>
+<header class="d-flex justify-content-center align-items-center">
+  <%#= <div class="overlay"> </div>%>
+  
+    <div class="kids_banner d-flex justify-content-center align-items-center w-100" style="background-image: url(https://res.cloudinary.com/dwsfhweeg/image/upload/v1616411138/Design_1_1_oc0d4b.png")>
+    <%#= <div class="banner d-flex flex-column align-items-center w-100" style="background-image: url(<%= @website&.section_named('hero')&.element_named('Background')")> %>
+    
+      <div class="kids-banner-content text-center">
+        <h1><%= @website&.section_named("hero")&.element_named("Title") %></h1>
+        <h2><%= @website&.section_named("hero")&.element_named("Subtitle") %></h2>
+        <p><%= @website&.section_named("hero")&.element_named("Text") %></p>
+        <button type="button" class="btn yellow-curved">Let's talk!</button>
+      </div>
+    
     </div>
+</header>
+
 <%# BIO %>
-    <div class="bio">
-      <%= @website&.section_named("bio")&.element_named("Greeting") %>
-      <%= @website&.section_named("bio")&.element_named("Tell us about yourself, sell why you are a great teacher and help your student's achieve their goals") %>
-      <%= @website&.section_named("bio")&.element_named("Upload a profile picture") %>
-    </div>
+    <div class="container">
+      <%#= @website&.section_named("bio")&.element_named("Greeting") %>
+      <%#= @website&.section_named("bio")&.element_named("Tell us about yourself, sell why you are a great teacher and help your student's achieve their goals") %>
+      <%#= @website&.section_named("bio")&.element_named("Upload a profile picture") %>
+      <div class="d-flex pt-5">
+        <div class="bio-left">
+          <h2>Hi, I'm Rachel!</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce neque enim, consectetur non faucibus a, cursus eget nisl. Suspendisse eget dapibus magna. Mauris varius pulvinar neque a sagittis. Proin eget elementum sem. Morbi at consectetur est. Ut placerat urna at luctus tincidunt. Pellentesque efficitur consectetur quam ut consectetur. Vivamus placerat eget dolor sed commodo. Vivamus iaculis orci ac purus sagittis, vel dignissim elit maximus. Integer fermentum dui a dui placerat placerat. Proin in quam vestibulum, dapibus neque sit amet, faucibus felis. Morbi nec massa et mi dictum tristique quis in diam. Proin non lacinia dolor. Curabitur a nisl mollis enim dapibus pulvinar a quis neque. Vivamus pellentesque varius dolor sit amet suscipit.</p>
+        </div>
+        <div class="bio-right">
+          <img src="https://cdn.pixabay.com/photo/2017/06/09/05/19/smiling-2385790_1280.jpg" alt="" class="hubbly-large">
+        </div>
+      </div>
+
 <%# CATCHY_INFO %>
-    <div class="catchy_info">
-      <%= @website&.section_named("catchy_info")&.element_named("One") %>
-      <%= @website&.section_named("catchy_info")&.element_named("Two") %>
-      <%= @website&.section_named("catchy_info")&.element_named("Three") %>
-      <%= @website&.section_named("catchy_info")&.element_named("Four") %>
-      <%= @website&.section_named("catchy_info")&.element_named("Five") %>
-      <%= @website&.section_named("catchy_info")&.element_named("Subtitle") %>
-      <%= @website&.section_named("catchy_info")&.element_named("Profile Video") %>
+    <div class="d-flex pt-5">
+      <div class="catchy-info-left">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%#= section.elements.find_by(category: :video).youtube_vid_id() %>"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <%#= @website&.section_named("catchy_info")&.element_named("Profile Video") %>
+      </div>
+      
+      <div class="catchy-info-right d-flex flex-column justify-content-center pl-5">
+        <%#= @website&.section_named("catchy_info")&.element_named("One") %>
+        <%#= @website&.section_named("catchy_info")&.element_named("Two") %>
+        <%#= @website&.section_named("catchy_info")&.element_named("Three") %>
+        <%#= @website&.section_named("catchy_info")&.element_named("Four") %>
+        <%#= @website&.section_named("catchy_info")&.element_named("Five") %>
+        <%#= @website&.section_named("catchy_info")&.element_named("Subtitle") %>
+        <p>* Teacher for 10+ years</p>
+        <p>* Native English speaker</p>
+        <p>* British accent</p>
+        <p>* CELTA Oxford qualified</p>
+        <p>* Barcelona based</p>
+      </div>
+    </div>
+
+<%# CALENDAR %>
+    <div class="calendar d-flex flex-column justify-content-center text-center pt-5">
+    <%#= @website&.section_named("calendar")&.element_named("headline") %>
+    <%#= @website&.section_named("calendar")&.element_named("sub-headline") %>
+    <%#= @website&.section_named("calendar")&.element_named("keypoints") %>
+    <h2>LET'S TALK!</h2>
+    <p>I speak English, Spanish and French</p>
+    <ul>
+      <li>Book a time for us to talk</li>
+      <li>Assess your level of English</li>
+      <li>Set your learning goals</li>
+    </ul>
+    <button type="button" class="btn yellow-curved"><a href="https://calendly.com/popjen/15min">View my calendar</a></button>
+    </div>
+
+<%#= PRICING %>
+
+      <div class="pricing-top calendar d-flex flex-column justify-content-center text-center pt-5">
+        <%#= @website&.section_named("price_info")&.element_named("Title") %>
+        <%#= @website&.section_named("price_info")&.element_named("teaser") %>
+       
+        
+        <h2>Pricing</h2>
+        <h3>Book 10+ hours and get 5% off</h3>
+      </div>
+
+      <div class="pricing-cards">
+      <%#= @website&.section_named("price_info")&.element_named("Product") ???????? how does this work???? value: "{type: 'one 2 one', offline_price: '20 Eur', online_price: '10 Eur' }" %>
+        <h4>One-to-one</h4>
+        <p>Online</p>
+        <h4>20€</h4>
+      </div>
+
+      <div class="pricing-bottom text-center">
+      <%#= @website&.section_named("price_info")&.element_named("policy") %>
+        <p>Group classes are for a max of 2 students online and 6 students in person</p>
+        <p>All prices are quoted per student per hour</p>
+      </div>
+
+    </div><%#= THIS CLOSES THE "CONTAINER" CLASS %>
   </body>
 </html>
