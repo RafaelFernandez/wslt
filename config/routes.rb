@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :websites, only: [:index, :create, :new, :show, :edit] do
+
     get 'builder', to: 'websites#builder'
     resources :sections, only: [:index, :create, :new, :show]
   end
