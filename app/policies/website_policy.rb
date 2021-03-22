@@ -10,11 +10,11 @@ class WebsitePolicy < ApplicationPolicy
   end
 
   def builder?
-    @user == @record.user
+    @user == @record.user || user.admin
   end
 
   def show?
-    @user == @record.user
+    @user == @record.user || user.admin
   end
 
   def update?

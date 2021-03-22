@@ -31,8 +31,9 @@ class WebsitesController < ApplicationController
   def show
     @website = Website.find(params[:id])
     authorize @website
+    render layout: @website.theme.name
   end
-  
+
   def update
     if @website.update(website_params)
       redirect_to @website, notice: 'Website was updated'
@@ -47,17 +48,24 @@ class WebsitesController < ApplicationController
   end
    
   def builder
-    @sections = Website.find(params[:website_id]).sections
-    @section_hero = Section.new(name: "hero")
-    @section_bio = Section.new(name: "bio")
-    @section_catchy = Section.new(name: "catchy_info")
-    @section_pricing = Section.new(name: "pricing")
-    
-    @section_hero.elements.build(@section_hero.get_elements)
-    @section_bio.elements.build(@section_bio.get_elements)
-    @section_catchy.elements.build(@section_catchy.get_elements)
-    @section_pricing.elements.build(@section_pricing.get_elements)
-    
+    @website = Website.find(params[:website_id])
+    @sections = @website.sections
+
+    @section_hero = @sections.find_by(name: "hero") || Section.new(name: "hero")
+    @section_bio = @sections.find_by(name: "bio") || Section.new(name: "bio")
+    @section_catchy = @sections.find_by(name: "catchy_info") || Section.new(name: "catchy_info")
+    @section_pricing = @sections.find_by(name: "pricing") || Section.new(name: "pricing")
+
+    @section_hero.elements.build(@section_hero.get_elements) if @section_hero.id.nil?
+    @section_bio.elements.build(@section_bio.get_elements) if @section_bio.id.nil?
+    @section_catchy.elements.build(@section_catchy.get_elements) if @section_catchy.id.nil?
+    @section_pricing.elements.build(@section_pricing.get_elements) if @section_pricing.id.nil?
+
+    @section_hero.website = @website
+    @section_bio.website = @website
+    @section_catchy.website = @website
+    @section_pricing.website = @website
+  
     @website = Website.find(params[:website_id])
     authorize @website
   end
@@ -77,4 +85,3 @@ class WebsitesController < ApplicationController
     params.require(:website).permit(:name, :domain, :theme_id)
   end
 end
-
