@@ -1,0 +1,50 @@
+body {
+  background-color: white;
+}
+
+.card-form {
+  border-radius: 5px;
+  text-align: left;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #EFEFEF;
+  position: relative;
+}
+.card-header {
+  color: #17A2B8;
+  background-color: #EFEFEF;
+  
+    p:after {
+    content: "<";
+    transform: rotate(90deg);
+    position: absolute;
+    top: 14px;
+    right: 15px;
+  }
+  p.collapsed:after {
+    content: ">";
+    transform: rotate(90deg);
+    position: absolute;
+    top: 14px;
+    right: 15px;
+  }
+}
+
+.card-body {
+  font-family: Nunito;
+  font-size: 18px;
+  margin-bottom: 12px;
+
+  label {
+  font-weight: bold;
+  }
+}
+
+.btn-form {
+  color: $primary;
+  font-size: 18px;
+  background-color: #F8F9FA;
+  border: 1px solid $primary;
+  border-radius: 4px;
+  padding: 10px 20px;
+}
+

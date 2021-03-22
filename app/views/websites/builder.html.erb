@@ -1,17 +1,14 @@
 <div class="row col-12 col-md-12">
-  <div class="container col-12 col-md-6 mr-0" data-controller="addsection">
+  <div class="container px-3 col-md-4 d-flex flex-column justify-content-start" data-controller="addsection">
 
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      Add New Section
-    </button>
+    
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Please Select a Section</h5>
+            <h4 class="modal-title" id="exampleModalLabel">Please Select a Section</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -34,13 +31,13 @@
 
     <div id="accordion">
     <%# first card   %> 
-        <div class="card <%= 'is-hidden' if @section_hero.id.nil? %> " data-addsection-target="card_hero" data-name="hero">
+        <div class="card w-100 <%= 'is-hidden' if @section_hero.id.nil? %> " data-addsection-target="card_hero" data-name="hero">
           <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
+            <h4 class="mb-0">
               <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-              <h5>Create Hero Section</h5>
+              <h4>Hero</h4>
               </button>
-            </h5>
+            </h4>
           </div>
           <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
@@ -50,15 +47,12 @@
         </div>
 
     <%# second card %>
-        <div class="card is-hidden" data-addsection-target="card_bio" data-name="bio">
-          <div class="card-header" id="headingTwo">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              <h5>Create Bio Section</h5>
-              </button>
-            </h5>
-          </div>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-form is-hidden" data-addsection-target="card_bio" data-name="bio">
+          <div class="card-header d-flex justify-content-between" id="headingTwo">
+          <h4 class="font-weight-bold m-0">Bio</h4>
+          <p class="collapsed" data-toggle="collapse" data-target=".collapseBio" aria-expanded="false" aria-controls="collapseBio"></p>
+          </div>  
+          <div class="collapseBio collapse" aria-labelledby="headingTwo" data-parent="#accordion">
             <div class="card-body">
               <%= render "sections/base_form", section: @section_bio, website: @website %>
             </div>
@@ -68,11 +62,11 @@
     <%# third card   %>
         <div class="card is-hidden" data-addsection-target="card_catchy" data-name="catchy">
           <div class="card-header" id="headingThree">
-            <h5 class="mb-0">
+            <h4 class="mb-0">
               <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                <h5>Create Catchy Info Section</h5>
+                <h4>Info about you</h4>
               </button>
-            </h5>
+            </h4>
           </div>
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
             <div class="card-body">
@@ -84,11 +78,11 @@
     <%# fourth card %>
       <div class="card is-hidden" data-addsection-target="card_pricing" data-name="pricing">
         <div class="card-header" id="headingFour">
-          <h5 class="mb-0">
+          <h4 class="mb-0">
             <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              <h5>Pricing Info</h5>
+              <h4>Pricing Info</h4>
             </button>
-          </h5>
+          </h4>
         </div>
         <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
           <div class="card-body">
@@ -98,11 +92,14 @@
         </div>
       </div>
     </div>
-
+    
+    <!-- Button trigger modal -->
+    <button type="button" class="btn-form mt-0" data-toggle="modal" data-target="#exampleModal">
+      Add New Section
+    </button>
   </div>
-  <div class="container col-12 col-md-6 mr-0">
+  <div class="container col-12 col-md-8 mr-0">
      <div class="col">
-      <p>right hand side - should show preview in divs here...🙏🏻</p>
       <div>
         <%= render "websites/preview" %>
       </div>

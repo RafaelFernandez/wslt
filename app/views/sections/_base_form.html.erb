@@ -9,10 +9,11 @@
           <%= image_tag "", width: 300, class: "hidden", id: "photo-preview", data: {target: 'upload.image'} %>
         </div>
       <% else %>
-        <%= p.input :value, label: section.elements[p.index].name, input_html: {data: {"preview-target": "data-preview-#{section.elements[p.index].name.downcase}", action: "input->preview#updatePreview"}} %>
+        <%= p.input :value, label: section.elements[p.index].name, 
+          input_html: {data: {"preview-target": "data-preview-#{section.elements[p.index].name.downcase}", action: "input->preview#updatePreview"}} %>
       <% end %>
     <% end %>
     <%= m.input :name, as: :hidden, input_html: {value: section.name} %>
-    <%= m.button :submit, class: 'btn-primary' %>
+    <%= m.button :submit, class: 'btn-form' %>
   <% end %>
 </div>
