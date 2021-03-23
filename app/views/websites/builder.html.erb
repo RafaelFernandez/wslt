@@ -23,6 +23,8 @@
             <hr>
             <a href="#" data-action="click->addsection#addCatchy" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Catchy Section</a>
             <a href="#" data-action="click->addsection#addPricing" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Pricing Section</a>
+            <hr>
+            <a href="#" data-action="click->addsection#addCalendar" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Calendar Section</a>
 
           </div>
           <div class="modal-footer">
@@ -93,6 +95,23 @@
         <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
           <div class="card-body">
             <%= render "sections/form_pricing", section: @section_pricing, website: @website %>
+
+          </div>
+        </div>
+      </div>
+
+    <%# fifth card %>
+      <div class="card is-hidden" data-addsection-target="card_calendar" data-name="calendar">
+        <div class="card-header" id="headingFive">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              <h5>Calendar Info</h5>
+            </button>
+          </h5>
+        </div>
+        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+          <div class="card-body">
+            <%= render "sections/base_form", section: @section_calendar, website: @website %>
 
           </div>
         </div>

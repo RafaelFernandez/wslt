@@ -41,8 +41,8 @@ Element.create category: 'video', name: 'Profile Video', value: 'https://www.you
 # BIO SECTION
 bio = Section.create(name: 'bio', order: 2, website: website)
 bio_greeting = Element.create(category: 'h2', name: 'Greeting', value: 'Hi! Im Rachel', section: bio)
-bio_tell_us_about_yourself = Element.create(category: 'p', name: "Tell us about yourself, sell why you are a great teacher and help your student's achieve their goals", value: 'I have been teaching for 10 years and guide students to achieve their own goals', section: bio)
-bio_upload_a_profile_picture = Element.create(category: 'img', name: 'Upload a profile picture', value: 'https://avatars3.githubusercontent.com/u/4753571?v=4', section: bio)
+bio_tell_us_about_yourself = Element.create(category: 'p', name: "Intro", value: 'I have been teaching for 10 years and guide students to achieve their own goals', section: bio)
+bio_upload_a_profile_picture = Element.create(category: 'img', name: 'Profile picture', value: 'https://avatars3.githubusercontent.com/u/4753571?v=4', section: bio)
 
 # PRICING SECTION
 price_info = Section.create( name: 'pricing', order: 4, website: website)

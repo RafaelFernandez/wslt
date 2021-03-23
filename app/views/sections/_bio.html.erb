@@ -1,8 +1,9 @@
-  <div class="container">
-    <h2><%= section.elements.find_by(category: :h2).value %></h2>
-      <p><%= section.elements.find_by(category: :p).value %></p>
-      <img src="<%= section.elements.find_by(category: :img).value %>"></img>
+<div class="d-flex pt-5 <%= 'is-hidden' if @section_bio&.id.nil? %>" id="preview_bio">
+  <div class="bio-left">
+      <h2 data-preview-greeting><%= Section.get_content_of(section, "Bio", "Greeting") %></h2>
+      <p data-preview-intro><%= Section.get_content_of(section, "Bio", "Intro") %></p>
   </div>
-
-
-
+  <div class="bio-right">
+      <img data-preview-picture src="<%= Section.get_content_of(section, "Bio", "Picture") %>" alt="" class="hubbly-large">
+  </div>
+</div>

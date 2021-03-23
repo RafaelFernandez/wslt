@@ -8,6 +8,8 @@ export default class extends Controller {
 
     if (inputType === 'background_image') {
       target.style.backgroundImage = `url(${imageUrl})`
+    } else if (inputType === 'image') {
+      target.src = imageUrl;
     } else {
       target.innerText = event.target.value
     }

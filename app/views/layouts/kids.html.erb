@@ -13,38 +13,12 @@
 
   <body class="kids-template">
 
-<%# HEADER HERO-SECTION %>
-<%# BANNER %>
-<header class="d-flex justify-content-center align-items-center">
-  <%#= <div class="overlay"> </div>%>
-  
-    <div class="kids_banner d-flex justify-content-center align-items-center w-100" style="background-image: url(https://res.cloudinary.com/dwsfhweeg/image/upload/v1616411138/Design_1_1_oc0d4b.png")>
-    <%#= <div class="banner d-flex flex-column align-items-center w-100" style="background-image: url(<%= @website&.section_named('hero')&.element_named('Background')")> %>
-    
-      <div class="kids-banner-content text-center">
-        <h1><%= @website&.section_named("hero")&.element_named("Title") %></h1>
-        <h2><%= @website&.section_named("hero")&.element_named("Subtitle") %></h2>
-        <p><%= @website&.section_named("hero")&.element_named("Text") %></p>
-        <a href="#" class="btn yellow-curved">Let's talk!</a>
-      </div>
-    
-    </div>
-</header>
+<%# HEADER HERO %>
+    <%= render 'sections/hero', section: @website&.section_named("hero") %>
 
 <%# BIO %>
     <div class="container">
-      <%#= @website&.section_named("bio")&.element_named("Greeting") %>
-      <%#= @website&.section_named("bio")&.element_named("Tell us about yourself, sell why you are a great teacher and help your student's achieve their goals") %>
-      <%#= @website&.section_named("bio")&.element_named("Upload a profile picture") %>
-      <div class="d-flex pt-5">
-        <div class="bio-left">
-          <h2>Hi, I'm Rachel!</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce neque enim, consectetur non faucibus a, cursus eget nisl. Suspendisse eget dapibus magna. Mauris varius pulvinar neque a sagittis. Proin eget elementum sem. Morbi at consectetur est. Ut placerat urna at luctus tincidunt. Pellentesque efficitur consectetur quam ut consectetur. Vivamus placerat eget dolor sed commodo. Vivamus iaculis orci ac purus sagittis, vel dignissim elit maximus. Integer fermentum dui a dui placerat placerat. Proin in quam vestibulum, dapibus neque sit amet, faucibus felis. Morbi nec massa et mi dictum tristique quis in diam. Proin non lacinia dolor. Curabitur a nisl mollis enim dapibus pulvinar a quis neque. Vivamus pellentesque varius dolor sit amet suscipit.</p>
-        </div>
-        <div class="bio-right">
-          <img src="https://cdn.pixabay.com/photo/2017/06/09/05/19/smiling-2385790_1280.jpg" alt="" class="hubbly-large">
-        </div>
-      </div>
+      <%= render 'sections/bio', section: @website&.section_named("bio") %>
 
 <%# CATCHY_INFO %>
     <div class="d-flex pt-5">
@@ -69,19 +43,7 @@
     </div>
 
 <%# CALENDAR %>
-    <div class="calendar text-center pt-5">
-    <%#= @website&.section_named("calendar")&.element_named("headline") %>
-    <%#= @website&.section_named("calendar")&.element_named("sub-headline") %>
-    <%#= @website&.section_named("calendar")&.element_named("keypoints") %>
-    <h2>Let's talk!</h2>
-    <p>I speak English, Spanish and French</p>
-    <ul>
-      <li>Book a time for us to talk</li>
-      <li>Assess your level of English</li>
-      <li>Set your learning goals</li>
-    </ul>
-    <a href="https://calendly.com/popjen/15min" class="btn yellow-curved">View my calendar</a>
-    </div>
+    <%= render 'sections/bio', section: @website&.section_named("bio") %>
 
 <%#= PRICING %>
 
