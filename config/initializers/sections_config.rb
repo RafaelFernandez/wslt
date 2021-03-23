@@ -23,9 +23,17 @@ SECTION_CONFIG = {
      {name: 'headline', category: :p, label: "Your headline text"},
      {name: 'subheadline', category: :p, label: "What languages do you speak"},
      {name: 'keypoints', category: :p, label: "Some key points why students should get in touch. One per line"},
-     {name: 'buttontext', category: :p, label: "Button text"},
      {name: 'calendlylink', category: :link, label: "Your Calendly link"},
-  ]
+  ],
+  #contact: [
+   # {name: 'email', category: :email, label: "Your email"},
+    #{name: "phone", category: :phone_number, label: "Your phone number"},
+    #{name: "facebook", category: :link, label: "Facebook"},
+    #{name: "instagram", category: :link, label: "Instagram"},
+    #{name: "twitter", category: :link, label: "Twitter"},
+    #{name: "linkedin", category: :link, label: "LinkedIn"},
+    #{name: "whatsapp", category: :phone_number, label: "WhatsApp"},
+ #]
 }
 
 SECTION_DEFAULT_CONTENT = {

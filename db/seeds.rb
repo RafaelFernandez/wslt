@@ -14,12 +14,12 @@ kids = Theme.create(name: 'kids')
 poppy = User.create!(email: "poppy@poppyworld.com", password: "password", first_name: "Poppy", last_name: "World")
 
 poppysworld = Website.create!(
-  name: "Poppy's World", 
+  name: "Poppy's World",
   domain: "englishlanguageteacher.com",
   user: poppy, theme: kids
 )
 
-# Website 
+# Website
 website = Website.create(user: user, theme: kids, name: 'My web', domain: 'englishlanguageteacher.com')
 # HERO SECTION
 hero = Section.create( name: 'hero', order: 1, website: poppysworld)
@@ -52,6 +52,17 @@ Element.create category: "p", name: "subheadline", value: "I speak English, Span
 Element.create category: "p", name: "keypoints", value: "Book a time for us to talk, -Assess your level of English, -Set your learning goals", section: calendar
 Element.create category: "p", name: "buttontext", value: "View my calendar", section: calendar
 Element.create category: 'link', name: 'calendlylink', value: 'https://calendly.com/popjen/15min', section: calendar
+
+
+#CONTACT SECTION
+contact = Section.create( name: 'contact', order: 6, website: website)
+Element.create category: "email", name: "Email", value: "rachel@gmail.com", section: contact
+Element.create category: "phone_number", name: "Phone Number", value: "+34-123-123456", section: contact
+Element.create category: "link", name: "Facebook", value: "https://www.facebook.com/truonganxinh", section: contact
+Element.create category: "link", name: "Instagram", value: "https://instagram.com/mirandakerr?igshid=i8lvpcvwmmmi", section: contact
+Element.create category: "link", name: "Twitter", value: "https://instagram.com/mirandakerr?igshid=i8lvpcvwmmmi", section: contact
+Element.create category: "link", name: "Linkedin", value: "https://www.linkedin.com/in/lutfur84/", section: contact
+Element.create category: "phone_number", name: "Whatsapp", value: "+34-123-123456", section: contact
 
 puts "done"
 

@@ -9,7 +9,9 @@ export default class extends Controller {
     if (inputType === 'background_image') {
       target.style.backgroundImage = `url(${imageUrl})`
     } else if (inputType === 'image') {
-      target.src = imageUrl;
+      target.src = imageUrl; 
+    } else if (inputType === 'link') {
+        target.setAttribute("href", event.target.value);
     } else {
       target.innerText = event.target.value
     }
