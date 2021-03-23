@@ -15,9 +15,10 @@
           </div>
 
           <div class="modal-body text-center">
+            <div class="d-flex"></div>
             <a href="#" data-action="click->addsection#addHero" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Hero Section</a>
             <a href="#" data-action="click->addsection#addBio" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Bio Section</a>
-            <hr>
+            
             <a href="#" data-action="click->addsection#addCatchy" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Catchy Section</a>
             <a href="#" data-action="click->addsection#addPricing" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Pricing Section</a>
 
@@ -30,64 +31,33 @@
     </div>
 
     <div id="accordion">
-    <%# first card   %> 
-        <div class="card-form <%= 'is-hidden' if @section_hero.id.nil? %> " data-addsection-target="card_hero" data-name="hero">
-          <div class="card-header d-flex justify-content-between" id="headingHero">
-          <h4 class="font-weight-bold m-0"><%= @section_hero.name.capitalize %></h4>
-          <p class="collapsed" data-toggle="collapse" data-target=".collapseHero" aria-expanded="false" aria-controls="collapseHero"></p>
-          </div>  
-          <div class="collapseHero collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-            <div class="card-body">
-              <%= render "sections/base_form", section: @section_hero, website: @website %>
+    
+      <% SECTION_CONFIG.keys.each do |section_name| %>
+        <% current_section = @sections_map[section_name]%>
+
+          <div class="card-form <%= 'is-hidden' if current_section.id.nil? %> " data-addsection-target="card_<%= section_name %>" data-name="<%= section_name %>">
+            <div class="card-header d-flex justify-content-between">
+              <h4 class="font-weight-bold m-0"><%= current_section.name.capitalize %></h4>
+              <p class="collapsed" data-toggle="collapse" data-target=".collapse_<%= section_name %>" aria-expanded="false" aria-controls="collapseHero"></p>
+            </div>  
+            <div class="collapse_<%= section_name %> collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                <% if section_name.to_s == 'pricing' %>
+                  <%= render "sections/form_pricing", section: current_section, website: @website %>
+                <% else %>
+                  <%= render "sections/base_form", section: current_section, website: @website %>
+                <% end %>
+              </div>
             </div>
           </div>
-        </div>
-
-    <%# second card %>
-        <div class="card-form <%= 'is-hidden' if @section_bio.id.nil? %>" data-addsection-target="card_bio" data-name="bio">
-          <div class="card-header d-flex justify-content-between" id="headingBio">
-            <h4 class="font-weight-bold m-0"><%= @section_bio.name.capitalize %></h4>
-            <p class="collapsed" data-toggle="collapse" data-target=".collapseBio" aria-expanded="false" aria-controls="collapseBio"></p>
-          </div>  
-          <div class="collapseBio collapse" aria-labelledby="headingBio" data-parent="#accordion">
-            <div class="card-body">
-              <%= render "sections/base_form", section: @section_bio, website: @website %>
-            </div>
-          </div>
-        </div>
-
-    <%# third card   %>
-        <div class="card-form <%= 'is-hidden' if @section_catchy.id.nil? %>" data-addsection-target="card_catchy" data-name="catchy">
-          <div class="card-header d-flex justify-content-between" id="headingCatchy">
-            <h4 class="font-weight-bold m-0"><%= @section_catchy.name.capitalize %></h4>
-            <p class="collapsed" data-toggle="collapse" data-target=".collapseCatchy" aria-expanded="false" aria-controls="collapseCatchy"></p>
-          </div>  
-          <div class="collapseCatchy collapse" aria-labelledby="headingCatchy" data-parent="#accordion">
-            <div class="card-body">
-              <%= render "sections/base_form", section: @section_catchy, website: @website %>
-            </div>
-          </div>
-        </div>
-
-    <%# fourth card %>
-      <div class="card-form <%= 'is-hidden' if @section_pricing.id.nil? %>" data-addsection-target="card_pricing" data-name="pricing">
-        <div class="card-header d-flex justify-content-between" id="headingPricing">
-          <h4 class="font-weight-bold m-0"><%= @section_pricing.name.capitalize %></h4>
-          <p class="collapsed" data-toggle="collapse" data-target=".collapsePricing" aria-expanded="false" aria-controls="collapsePricing"></p>
-        </div>
-        <div class="collapsePricing collapse" aria-labelledby="headingPricing" data-parent="#accordion">
-          <div class="card-body">
-            <%= render "sections/form_pricing", section: @section_pricing, website: @website %>
-
-          </div>
-        </div>
-      </div>
-    </div>
+      <% end %>
+    
     
     <!-- Button trigger modal -->
-    <button type="button" class="btn-form mt-0" data-toggle="modal" data-target="#exampleModal">
-      Add New Section
-    </button>
+      <button type="button" class="btn-form mt-0" data-toggle="modal" data-target="#exampleModal">
+        Add New Section
+      </button>
+      </div>
   </div>
   <div class="container col-12 col-md-8 mr-0">
      <div class="col">

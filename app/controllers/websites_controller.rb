@@ -34,6 +34,13 @@ class WebsitesController < ApplicationController
     @section_bio.website = @website
     @section_catchy.website = @website
     @section_pricing.website = @website
+
+    @sections_map = {
+      hero: @section_hero,
+      bio: @section_bio,
+      catchy_info: @section_catchy,
+      pricing: @section_pricing
+    }
   end
 
   def show
