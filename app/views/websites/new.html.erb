@@ -1,19 +1,22 @@
 <% if policy(Website).new? %>
 
 <div class="container">
-  <div class="row">
-    <div class="col-8">
-        <h2 mt-5>Create your domain</h2>
-        <%= simple_form_for @website do |f| %>
-          <%= f.input :name, label: "Write your website name" %>
-          <%= f.input :domain, collection: Website::DOMAIN_OPTIONS %>
-        <h2>Choose your template</h2>
-          <%= f.input :theme_id, collection: Website::THEMES.map { |t| [t, Theme.find_by(name: t).id]} %>
 
-          <%= f.button :submit, class: 'btn btn-primary' %>
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex col-7 flex-column p-4">
+      <h2>Create your domain</h2>
+      <%= simple_form_for @website do |f| %>
+        <%= f.input :name, label: "Write your website name" %>
+        <%= f.input :domain, collection: Website::DOMAIN_OPTIONS %>
+      <h2>Choose your template</h2>
+        <%= f.input :theme_id, collection: Website::THEMES.map { |t| [t, Theme.find_by(name: t).id]} %>
+
+        <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
     </div>
+    <div class="create-website-img"></div>
   </div>
+
 </div>
 
 <% end %>
