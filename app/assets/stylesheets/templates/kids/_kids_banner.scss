@@ -1,0 +1,45 @@
+.kids-template {
+  header {
+  }
+
+  .overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width:100%;
+    background-color: black;
+    opacity: 0.3;
+    z-index: 1;
+  }
+  
+  .kids_banner {
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
+    
+    
+    h1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 75px;
+      font-weight: 900;
+      z-index: 5;
+      background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 32px;
+      z-index: 5;
+      color:  rgba(255, 255, 255, 0.7);
+    }
+
+    p {
+      font-family: 'Caveat', cursive;
+      font-size: 32px;
+      z-index: 5;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+}
