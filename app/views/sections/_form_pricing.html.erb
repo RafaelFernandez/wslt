@@ -1,12 +1,26 @@
-<%= simple_form_for [website, section] do |m| %>
-  <%= m.simple_fields_for :elements do |p| %>
-    <%= p.input :name, as: :hidden, input_html: { value: section.elements[p.index].name } %>
-    <%= p.input :category, as: :hidden, input_html: { value: section.elements[p.index].category } %>
-    <% if section.elements[p.index].category == "product" %>
-      <%= p.input :value, as: :product, position: p.index %>
-    <% else %>
-      <%= p.input :value, label: section.elements[p.index].name %>
-    <% end %>
+<%= form_tag section.id.nil? ? website_sections_path(website) : website_section_path(website, section), method: section.id.nil? ? :post : :patch do %>
+  <%= hidden_field_tag "section[name]", 'pricing' %>
+  <% section.elements.each_with_index do |el, i| %>
+
+    <%= hidden_field_tag "section[elements_attributes][#{i}][name]", el.name %>
+    <%= hidden_field_tag "section[elements_attributes][#{i}][category]", el.category %>
+    <div class="form-group">
+      
+      <% if el.category == "product" %>
+        <%= label_tag 'Service name / offline price / online price' %>
+
+        <div class="d-flex">    
+          <%= text_field_tag "section[elements_attributes][#{i}][value][type]", eval(el.value || '{}')['type'], class: 'form-control' %>
+
+          <%= number_field_tag "section[elements_attributes][#{i}][value][offline_price]", eval(el.value || '{}')['offline_price'], class: 'form-control', placeholder: 'offline' %>
+
+          <%= text_field_tag "section[elements_attributes][#{i}][value][online_price]", eval(el.value || '{}')['online_price'], class: 'form-control', placeholder: 'online' %>
+        </div>
+      <% else %>
+        <%= label_tag el.name %>
+        <%= text_field_tag "section[elements_attributes][#{i}][value]", el.value, class: 'form-control' %>
+      <% end %>
+    </div>
   <% end %>
-  <%= m.button :submit, class: 'btn-primary' %>
+  <%= submit_tag 'Save section', class: 'btn-form' %>
 <% end %>

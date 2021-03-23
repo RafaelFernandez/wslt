@@ -1,28 +1,7 @@
-<!-- <h1>preview section render from partial</h1>
-
-
-<p>STEPS:
-<ul>
-<li>"Key-up" event? fires the JavaScript to "CreateElement"? - To create a div in the _preview.html.erb</li>
-<li>NOTE - Is it much more complicated to have it working accross different files as opposed to all in the same fil?</li>
-<li>I want the div that is created to be set with various classes</li>
-<li>The naming convention of these classes should be something along the lines of: defaultTemplate hero title</li>
-<li>Essentially they should be assigned the classes relating to the template the teacher has chosen, the section they are in eg hero, bio, catchy-info etc.. and then the element they are creating eg title, greeting, One, Two</li>
-<li>Note this is only for TEXT inputs</li>
-</ul>
-<p>Parts of the puzzel:</p>
-<ul>
-<li>Our "website builder" page THIS PAGE renders a partial called "Preview"</li>
-<li>Our builder page is made from divs (the form open/close bits) that are only created when someone clicks to add that section (from the modal pop-up)</li>
-<li>Each one of these form open/close divs is rendered from the _base_form(websites) partial</li>
-<li>The _base_form is linked to the section_config.rb file (which tells the form how manyor which sections to display)</li>
-</ul>
-
--->
 <div class="kids-template">
-  <%= render "sections/hero", section: nil %>
+  <%= render "sections/hero", section: @website.section_named("hero") || nil %>
   <div class="container">
-    <%= render "sections/bio", section: nil %>
+    <%= render "sections/bio", section: @website.section_named("bio") || nil %>
     <%= render "sections/calendar", section: nil %>
   </div>
 </div>

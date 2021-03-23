@@ -8,7 +8,7 @@ User.destroy_all
 user = User.create(first_name: 'John', last_name: 'Doe', email: 'j@gmail.com', password: 'password')
 
 Theme.create(name: 'dudu')
-# Theme.create(name: 'default')
+Theme.create(name: 'default')
 kids = Theme.create(name: 'kids')
 
 poppy = User.create!(email: "poppy@poppyworld.com", password: "password", first_name: "Poppy", last_name: "World")
@@ -35,14 +35,14 @@ Element.create category: 'list', name: 'Two', value: "Native English speaker", s
 Element.create category: 'list', name: 'Three', value: "British accent", section: catchy_info
 Element.create category: 'list', name: 'Four', value: "CELTA Oxford qualified", section: catchy_info
 Element.create category: 'list', name: 'Five', value: "Barcelona based", section: catchy_info
-Element.create category: 'h2', name: 'Subtitle', value: "Watch my video!", section: catchy_info
-Element.create category: 'video', name: 'Profile Video', value: 'https://www.youtube.com/watch?v=TTemFSm_KIU', section: catchy_info
+Element.create category: 'h2', name: 'Video title', value: "Watch my video!", section: catchy_info
+Element.create category: 'video', name: 'Upload an intro video', value: 'https://www.youtube.com/watch?v=TTemFSm_KIU', section: catchy_info
 
 # BIO SECTION
 bio = Section.create(name: 'bio', order: 2, website: website)
-bio_greeting = Element.create(category: 'h2', name: 'Greeting', value: 'Hi! Im Rachel', section: bio)
-bio_tell_us_about_yourself = Element.create(category: 'p', name: "Intro", value: 'I have been teaching for 10 years and guide students to achieve their own goals', section: bio)
-bio_upload_a_profile_picture = Element.create(category: 'img', name: 'Profile picture', value: 'https://avatars3.githubusercontent.com/u/4753571?v=4', section: bio)
+Element.create(category: 'h2', name: 'Greeting', value: 'Hi! Im Rachel', section: bio)
+Element.create(category: 'p', name: "Intro", value: 'I have been teaching for 10 years and guide students to achieve their own goals', section: bio)
+Element.create(category: 'img', name: 'Profile picture', value: 'https://avatars3.githubusercontent.com/u/4753571?v=4', section: bio)
 
 # PRICING SECTION
 price_info = Section.create( name: 'pricing', order: 4, website: website)

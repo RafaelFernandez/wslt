@@ -68,8 +68,15 @@ class WebsitesController < ApplicationController
     @section_catchy.website = @website
     @section_pricing.website = @website
     @section_calendar.website = @website
+
+    @sections_map = {
+      hero: @section_hero,
+      bio: @section_bio,
+      catchy_info: @section_catchy,
+      pricing: @section_pricing,
+      calendar: @section_calendar
+    }
   
-    @website = Website.find(params[:website_id])
     authorize @website
   end
 
