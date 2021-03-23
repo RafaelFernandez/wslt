@@ -53,24 +53,28 @@ class WebsitesController < ApplicationController
 
     @section_hero = @sections.find_by(name: "hero") || Section.new(name: "hero")
     @section_bio = @sections.find_by(name: "bio") || Section.new(name: "bio")
-    @section_catchy = @sections.find_by(name: "catchy_info") || Section.new(name: "catchy_info")
+    @section_catchy = @sections.find_by(name: "catchy") || Section.new(name: "catchy")
     @section_pricing = @sections.find_by(name: "pricing") || Section.new(name: "pricing")
+    @section_calendar = @sections.find_by(name: "calendar") || Section.new(name: "calendar")
 
     @section_hero.elements.build(@section_hero.get_elements) if @section_hero.id.nil?
     @section_bio.elements.build(@section_bio.get_elements) if @section_bio.id.nil?
     @section_catchy.elements.build(@section_catchy.get_elements) if @section_catchy.id.nil?
     @section_pricing.elements.build(@section_pricing.get_elements) if @section_pricing.id.nil?
+    @section_calendar.elements.build(@section_calendar.get_elements) if @section_calendar.id.nil?
 
     @section_hero.website = @website
     @section_bio.website = @website
     @section_catchy.website = @website
     @section_pricing.website = @website
+    @section_calendar.website = @website
 
     @sections_map = {
       hero: @section_hero,
       bio: @section_bio,
-      catchy_info: @section_catchy,
-      pricing: @section_pricing
+      catchy: @section_catchy,
+      pricing: @section_pricing,
+      calendar: @section_calendar
     }
   
     authorize @website

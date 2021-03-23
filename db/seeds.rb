@@ -29,7 +29,7 @@ Element.create(name: 'Text', value: 'Helping young learners reach fluency throug
 Element.create(name: 'Background', value: 'https://cdn.pixabay.com/photo/2018/01/17/07/06/laptop-3087585_1280.jpg', category: :img, section: hero)
 
 # CATCHY INFO SECTION
-catchy_info = Section.create name: 'catchy_info', order: 3, website: website
+catchy_info = Section.create name: 'catchy', order: 3, website: website
 Element.create category: 'list', name: 'One', value: "Teacher for 10+ years", section: catchy_info
 Element.create category: 'list', name: 'Two', value: "Native English speaker", section: catchy_info
 Element.create category: 'list', name: 'Three', value: "British accent", section: catchy_info
