@@ -8,7 +8,7 @@ class WebsitesController < ApplicationController
     @websites = policy_scope(Website)
     # if no pundit - @websites = current_user.websites
   end
-  
+
   def new
     # @user = current_user
     @website = Website.new
@@ -41,12 +41,12 @@ class WebsitesController < ApplicationController
       render :edit
     end
   end
-  
+
   def edit
     @website = Website.find(params[:id])
     authorize @website
   end
-   
+
   def builder
     @website = Website.find(params[:website_id])
     @sections = @website.sections
@@ -55,24 +55,28 @@ class WebsitesController < ApplicationController
     @section_bio = @sections.find_by(name: "bio") || Section.new(name: "bio")
     @section_catchy = @sections.find_by(name: "catchy_info") || Section.new(name: "catchy_info")
     @section_pricing = @sections.find_by(name: "pricing") || Section.new(name: "pricing")
+    @section_contact = @sections.find_by(name: "contact") || Section.new(name: "contact")
 
     @section_hero.elements.build(@section_hero.get_elements) if @section_hero.id.nil?
     @section_bio.elements.build(@section_bio.get_elements) if @section_bio.id.nil?
     @section_catchy.elements.build(@section_catchy.get_elements) if @section_catchy.id.nil?
     @section_pricing.elements.build(@section_pricing.get_elements) if @section_pricing.id.nil?
+    @section_contact.elements.build(@section_contact.get_elements) if @section_contact.id.nil?
 
     @section_hero.website = @website
     @section_bio.website = @website
     @section_catchy.website = @website
     @section_pricing.website = @website
+    @section_contact.website = @website
 
     @sections_map = {
       hero: @section_hero,
       bio: @section_bio,
       catchy_info: @section_catchy,
-      pricing: @section_pricing
+      pricing: @section_pricing,
+      contact: @section_contact
     }
-  
+
     authorize @website
   end
 

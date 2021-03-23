@@ -2,7 +2,7 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
 
-  static targets = ['card_hero', 'card_bio', 'card_catchy', 'card_pricing']
+  static targets = ['card_hero', 'card_bio', 'card_catchy', 'card_pricing', 'card_contact']
 
   addHero(event) {
     event.preventDefault();
@@ -20,5 +20,8 @@ export default class extends Controller {
     event.preventDefault();
     this.card_pricingTarget.classList.remove('is-hidden')
   }
-
+  addContact(event) {
+    event.preventDefault();
+    this.card_contactTarget.classList.remove('is-hidden')
+  }
 }

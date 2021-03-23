@@ -65,12 +65,12 @@ Element.create category: 'link', name: 'calendly-link', value: 'https://calendly
 #CONTACT SECTION
 contact = Section.create( name: 'contact', order: 6, website: website)
 Element.create category: "email", name: "Email", value: "rachel@gmail.com", section: contact
-Element.create category: "p", name: "Phone Number", value: "+34-123-123456", section: contact
+Element.create category: "phone_number", name: "Phone Number", value: "+34-123-123456", section: contact
 Element.create category: "link", name: "Facebook", value: "https://www.facebook.com/truonganxinh", section: contact
 Element.create category: "link", name: "Instagram", value: "https://instagram.com/mirandakerr?igshid=i8lvpcvwmmmi", section: contact
 Element.create category: "link", name: "Twitter", value: "https://instagram.com/mirandakerr?igshid=i8lvpcvwmmmi", section: contact
 Element.create category: "link", name: "Linkedin", value: "https://www.linkedin.com/in/lutfur84/", section: contact
-Element.create category: "p", name: "Whatsapp", value: "+34-123-123456", section: contact
+Element.create category: "phone_number", name: "Whatsapp", value: "+34-123-123456", section: contact
 
 puts "done"
 
