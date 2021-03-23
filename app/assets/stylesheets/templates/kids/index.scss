@@ -1,17 +1,12 @@
 // here you import all the partials for the KIDS template
-@import "banner";
+@import "kids_banner";
+@import "kids_button";
+@import "kids_hubbly";
+@import "kids_divs";
 
-
-.kids-template {
-
-
-  p {
-    font-family:'Times New Roman', Times, serif;
-  }
-
-  h1, h2, h3 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  }
-
-
+body{
+  background-color: #FAEADD;
+}
+.kids-class{
+  background-color: #FAEADD;
 }
