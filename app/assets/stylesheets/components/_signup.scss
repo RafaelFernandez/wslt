@@ -1,5 +1,25 @@
-.sign-up {
-  border-radius: 8px;
+.sign-up-img {
+  width: 50vw;
+  height: 60vh;
+  background-image: url("https://euroamerican.dk/photo/wslt/scene5.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+.log-in-img {
+  width: 50vw;
+  height: 60vh;
+  background-image: url("https://euroamerican.dk/photo/wslt/scene4.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+.password-forgot-img {
+  width: 50vw;
+  height: 60vh;
+  background-image: url("https://euroamerican.dk/photo/wslt/scene9.svg");
+  background-size: cover;
+  background-position: center;
 }
 
 .btn a {
@@ -31,5 +51,4 @@
   background-color: transparent;
   background-image: none;
   border-color: #007bff;
-
 }
