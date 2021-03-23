@@ -1,5 +1,5 @@
 class Element < ApplicationRecord
-  enum category: [:h1, :h2, :h3, :p, :img, :video, :list, :product, :link]
+  enum category: [:h1, :h2, :h3, :p, :img, :video, :list, :product, :link, :email]
 
   belongs_to :section
   has_one_attached :photo

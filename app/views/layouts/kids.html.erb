@@ -17,17 +17,17 @@
 <%# BANNER %>
 <header class="d-flex justify-content-center align-items-center">
   <%#= <div class="overlay"> </div>%>
-  
+
     <div class="kids_banner d-flex justify-content-center align-items-center w-100" style="background-image: url(https://res.cloudinary.com/dwsfhweeg/image/upload/v1616411138/Design_1_1_oc0d4b.png")>
     <%#= <div class="banner d-flex flex-column align-items-center w-100" style="background-image: url(<%= @website&.section_named('hero')&.element_named('Background')")> %>
-    
+
       <div class="kids-banner-content text-center">
         <h1><%= @website&.section_named("hero")&.element_named("Title") %></h1>
         <h2><%= @website&.section_named("hero")&.element_named("Subtitle") %></h2>
         <p><%= @website&.section_named("hero")&.element_named("Text") %></p>
         <a href="#" class="btn yellow-curved">Let's talk!</a>
       </div>
-    
+
     </div>
 </header>
 
@@ -52,7 +52,7 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/YAVj0p87jMo<%#= section.elements.find_by(category: :video).youtube_vid_id() %>"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <%#= @website&.section_named("catchy_info")&.element_named("Profile Video") %>
       </div>
-      
+
       <div class="catchy-info-right d-flex flex-column justify-content-center pl-5">
         <%#= @website&.section_named("catchy_info")&.element_named("One") %>
         <%#= @website&.section_named("catchy_info")&.element_named("Two") %>
@@ -88,28 +88,28 @@
       <div class="pricing-top d-flex flex-column justify-content-center text-center pt-5">
         <%#= @website&.section_named("price_info")&.element_named("Title") %>
         <%#= @website&.section_named("price_info")&.element_named("teaser") %>
-       
+
         <h2>Pricing</h2>
         <h3>Book 10+ hours and get 5% off</h3>
       </div>
 
 
       <div class="product-cards d-flex">
-      
+
 <%#= FIRST PRODUCT ONE-TO-ONE CLASSES %>
         <div class="product-card text-center">
         <%#= @website&.section_named("price_info")&.element_named("Product") ???????? how does this work???? value: "{type: 'one 2 one', offline_price: '20 Eur', online_price: '10 Eur' }" %>
           <h4>One-to-one</h4>
             <div class="product-pricing d-flex justify-content-center">
                 <div class="hubbly-small-left d-flex justify-content-center">
-                  <div class="pricing-hubbly-content d-flex flex-column justify-content-center text-center">  
+                  <div class="pricing-hubbly-content d-flex flex-column justify-content-center text-center">
                     <p>Online</p>
                     <h4>15€</h4>
                   </div>
                 </div>
 
                 <div class="hubbly-small-right d-flex justify-content-center">
-                  <div class="pricing-hubbly-content d-flex flex-column justify-content-center text-center">  
+                  <div class="pricing-hubbly-content d-flex flex-column justify-content-center text-center">
                     <p>In person</p>
                     <h4>25€</h4>
                   </div>
@@ -123,14 +123,14 @@
           <h4>Exam prep classes</h4>
             <div class="product-pricing d-flex">
                 <div class="hubbly-small-left d-flex justify-content-center">
-                  <div class="pricing-hubbly-content d-flex flex-column justify-content-center text-center">  
+                  <div class="pricing-hubbly-content d-flex flex-column justify-content-center text-center">
                     <p>Online</p>
                     <h4>20€</h4>
                   </div>
                 </div>
 
                 <div class="hubbly-small-right d-flex justify-content-center">
-                  <div class="pricing-hubbly-content d-flex flex-column justify-content-center text-center">  
+                  <div class="pricing-hubbly-content d-flex flex-column justify-content-center text-center">
                     <p>In person</p>
                     <h4>25€</h4>
                   </div>
@@ -140,11 +140,12 @@
       </div>
 
       <div class="pricing-bottom text-center">
-      <%#= @website&.section_named("price_info")&.element_named("policy") %>           
+      <%#= @website&.section_named("price_info")&.element_named("policy") %>
         <p>Group classes are for a max of 2 students online and 6 students in person</p>
         <p>All prices are quoted per student per hour</p>
       </div>
 
+      <%= render "sections/contact", section: @website.section_named("contact") %>
     </div><%#= THIS CLOSES THE "CONTAINER" CLASS %>
   </body>
 </html>
