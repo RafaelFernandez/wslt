@@ -4,6 +4,7 @@
 
     <%= hidden_field_tag "section[elements_attributes][#{i}][name]", el.name %>
     <%= hidden_field_tag "section[elements_attributes][#{i}][category]", el.category %>
+    <%= hidden_field_tag "section[elements_attributes][#{i}][label]", el.label %>
     <div class="form-group">
       
       <% if el.category == "product" %>
@@ -17,7 +18,7 @@
           <%= text_field_tag "section[elements_attributes][#{i}][value][online_price]", eval(el.value || '{}')['online_price'], class: 'form-control', placeholder: 'online' %>
         </div>
       <% else %>
-        <%= label_tag el.name %>
+        <%= label_tag el.label %>
         <%= text_field_tag "section[elements_attributes][#{i}][value]", el.value, class: 'form-control' %>
       <% end %>
     </div>

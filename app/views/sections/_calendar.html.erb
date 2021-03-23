@@ -1,13 +1,12 @@
 <div class="calendar text-center pt-5 <%= 'is-hidden' if @section_calendar.id.nil? %>" id="preview_calendar">
-  <h2><%= section&.element_named("headline") %></h2>
-  <p><%= section&.element_named("sub-headline") %></p>
+  <h2 data-preview-headline><%= Section.get_content_of(section, "calendar", "headline") %></h2>
+  <p data-preview-subheadline><%= Section.get_content_of(section, "calendar", "subheadline") %></p>
   
-  <%#= @website&.section_named("calendar")&.element_named("keypoints") %>
   <ul>
-    <li>Book a time for us to talk</li>
-    <li>Assess your level of English</li>
-    <li>Set your learning goals</li>
+    <li data-preview-keypoints><%= Section.get_content_of(section, "calendar", "keypoints") %></li>
+    <li data-preview-keypoints><%= Section.get_content_of(section, "calendar", "keypoints") %></li>
+    <li data-preview-keypoints><%= Section.get_content_of(section, "calendar", "keypoints") %></li>
   </ul>
 
-  <a href="<%= section&.elements_named("calendly-link") %>" class="btn yellow-curved">View my calendar</a>
+  <a data-preview-calendlylink href="<%= Section.get_content_of(section, "calendar", "calendlylink") %>" class="btn yellow-curved">View my calendar</a>
 </div>

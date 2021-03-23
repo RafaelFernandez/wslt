@@ -2,6 +2,6 @@
   <%= render "sections/hero", section: @website.section_named("hero") || nil %>
   <div class="container">
     <%= render "sections/bio", section: @website.section_named("bio") || nil %>
-    <%= render "sections/calendar", section: nil %>
+    <%= render "sections/calendar", section: @website.section_named("calendar") || nil %>
   </div>
 </div>

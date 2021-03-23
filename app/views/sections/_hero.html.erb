@@ -1,9 +1,9 @@
 <header class="d-flex justify-content-center align-items-center <%= 'is-hidden' if @section_hero&.id.nil? %>" id="preview_hero">
   <div class="kids_banner d-flex justify-content-center align-items-center w-100" style="background-image: url(https://res.cloudinary.com/dwsfhweeg/image/upload/v1616411138/Design_1_1_oc0d4b.png")>    
     <div class="kids-banner-content text-center">
-      <h1 data-preview-title><%= Section.get_content_of(section, "Hero", "Title") %></h1>
-      <h2 data-preview-subtitle><%= Section.get_content_of(section, "Hero", "Subtitle") %></h2>
-      <p data-preview-text><%= Section.get_content_of(section, "Hero", "Text") %></p>
+      <h1 data-preview-title><%= Section.get_content_of(section, "Hero", "title") %></h1>
+      <h2 data-preview-subtitle><%= Section.get_content_of(section, "Hero", "subtitle") %></h2>
+      <p data-preview-text><%= Section.get_content_of(section, "Hero", "text") %></p>
       <a href="#" class="btn yellow-curved">Let's talk!</a>
     </div>
   </div>

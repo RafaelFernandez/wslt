@@ -53,7 +53,7 @@ class WebsitesController < ApplicationController
 
     @section_hero = @sections.find_by(name: "hero") || Section.new(name: "hero")
     @section_bio = @sections.find_by(name: "bio") || Section.new(name: "bio")
-    @section_catchy = @sections.find_by(name: "catchy_info") || Section.new(name: "catchy_info")
+    @section_catchy = @sections.find_by(name: "catchy") || Section.new(name: "catchy")
     @section_pricing = @sections.find_by(name: "pricing") || Section.new(name: "pricing")
     @section_calendar = @sections.find_by(name: "calendar") || Section.new(name: "calendar")
 
@@ -72,7 +72,7 @@ class WebsitesController < ApplicationController
     @sections_map = {
       hero: @section_hero,
       bio: @section_bio,
-      catchy_info: @section_catchy,
+      catchy: @section_catchy,
       pricing: @section_pricing,
       calendar: @section_calendar
     }

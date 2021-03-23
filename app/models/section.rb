@@ -13,7 +13,7 @@ class Section < ApplicationRecord
   end
 
   def self.get_content_of(section, section_name, element_name)
-    # section.get_content_of("Greeting")
+    # section.get_content_of("greeting")
     if section&.element_named(element_name).present?
       # return the content
       section&.element_named(element_name)
