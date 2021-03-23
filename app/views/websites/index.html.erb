@@ -1,12 +1,12 @@
 <div class="container">
-  <h2>website Index</h2>
-  <h3>You are 
+  <h2 mt-5>Website Index</h2>
+  <h3>You are
   <%= current_user.admin ? "an admin" : "a normal user" %>
   </h3>
 
   <% @websites.each do |we| %>
   <%= we.name %> -
-  <%= User.find(we.user_id).first_name %> - 
+  <%= User.find(we.user_id).first_name %> -
   <%= link_to 'Show', we %>
   <%= link_to 'Edit', edit_website_path(we) %>
   <br>
