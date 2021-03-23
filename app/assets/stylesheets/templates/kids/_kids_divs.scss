@@ -1,0 +1,68 @@
+.bio-left {
+  h2{
+    font-family: 'Roboto';
+    font-size: 42px;
+    font-weight: bold;
+  }
+  p{
+    font-family: 'Roboto';
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.bio-right{
+  flex-grow:1;
+}
+
+.catchy-info-right {
+  p {
+    font-family: 'Caveat', cursive;
+    font-size: 24px;
+  }
+}
+
+.calendar {
+  h2{
+    font-family: 'Roboto';
+    font-size: 42px;
+    font-weight: bold;
+  }
+  p{
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  li {
+    list-style-type: none;
+    font-family: 'Roboto';
+    font-size: 18px;
+  }
+}
+
+.pricing-top{
+  h2{
+    font-family: 'Roboto';
+    font-size: 42px;
+    font-weight: bold;
+  }
+  h3{
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.pricing-bottom{
+  p{
+    font-family: 'Roboto';
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.6);
+  }  
+}
+
+.product-cards{
+  margin: 30px auto 30px auto;
+  justify-content: space-between;
+  width: 80%;
+}
