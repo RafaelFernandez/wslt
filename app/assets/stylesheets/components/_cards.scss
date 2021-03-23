@@ -1,20 +1,39 @@
+.cards-scrolls {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space:nowrap;
+  display: flex;
+}
+
+.card-img {
+  margin-right: 35px;
+  width: 70%;
+  height: 500px;
+  background-size: cover;
+
+}
+
 .card img {
-  width: 230px;
+  width: 80px;
+  margin: 0 auto;
+  opacity: 0.5;
 }
 
 .card p {
   opacity: .8;
-  font-family: Nunito;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+
 }
 
 
 .card {
   width: 300px;
   border-radius: 5px;
-  box-shadow: 0 0 5px rgb(230,230,230);
+  // box-shadow: 0 0 5px rgb(230,230,230);
   text-align: left;
   // padding: 20px;
-  border: 1px solid rgb(230,230,230);
+  border: 0px solid rgb(230,230,230);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .cards {
@@ -37,7 +56,6 @@
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
   // background-color: #E5F6FE;
   svg {
@@ -63,4 +81,8 @@
 
 .card-content {
   padding-top: 70px;
+}
+.basic-plan, .standard-plan, .premium-plan {
+  box-shadow: 0 0 5px rgb(230,230,230);
+  border: 1px solid rgb(230,230,230);
 }

@@ -16,7 +16,6 @@ class SectionsController < ApplicationController
     @section = Section.new(section_params)
     @website = Website.find(params[:website_id])
     @section.website = @website
-     # @section.user = current_user
     if @section.save
       redirect_to website_builder_path(@website)
     else
