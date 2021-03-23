@@ -25,7 +25,7 @@ class SectionsController < ApplicationController
 
   def update
     @section = Section.find(params[:id])
-    # @section.user = current_user
+    @section.elements.destroy_all
     if @section.update(section_params)
       redirect_to website_builder_path(@section.website)
     else
@@ -35,6 +35,12 @@ class SectionsController < ApplicationController
 
 
   def section_params
+
+    params[:section][:elements_attributes].each do |k, v| 
+      if v[:category] == 'product'
+        v[:value] = v[:value].to_s
+      end
+    end
     params.require(:section).permit(:name, elements_attributes: [:name, :value, :category, :photo])
   end
 end
