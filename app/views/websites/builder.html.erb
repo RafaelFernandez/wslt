@@ -16,7 +16,8 @@
                 bio: { icon: 'fas fa-user-graduate', desc: 'Let us know something about you.' },
                 catchy: { icon: 'fas fa-bell', desc: 'Show off your main achiviements.' },
                 pricing: { icon: 'fas fa-money-bill', desc: 'Ask for the value you give.' },
-                calendar: { icon: 'fas fa-calendar-alt', desc: 'Tell us where you are available.' }
+                calendar: { icon: 'fas fa-calendar-alt', desc: 'Tell us where you are available.' },
+                contact: { icon: 'far fa-envelope', desc: 'How can people contact you?' }
                }               
             %>
             <% SECTION_CONFIG.keys.each do |section_name| %>            
@@ -43,7 +44,7 @@
             <div class="card-header d-flex justify-content-between">
               <h4 class="font-weight-bold m-0"><%= current_section.name.capitalize %></h4>
               <p class="collapsed" data-toggle="collapse" data-target=".collapse_<%= section_name %>" aria-expanded="false" aria-controls="collapseHero"></p>
-            </div>  
+            </div>
             <div class="collapse_<%= section_name %> collapse" aria-labelledby="headingTwo" data-parent="#accordion">
               <div class="card-body">
                 <% if section_name.to_s == 'pricing' %>
@@ -55,8 +56,8 @@
             </div>
           </div>
       <% end %>
-    
-    
+
+
     <!-- Button trigger modal -->
       <button type="button" class="btn-form mt-0" data-toggle="modal" data-target="#exampleModal">
         + Add Content
