@@ -9,7 +9,7 @@ SECTION_CONFIG = {
     {name: "Tell us about yourself", category: :p},
     {name: 'Upload a profile picture', category: :img}
   ],
-  catchy_info: [
+  catchy: [
     {name: 'Tell us 5 interesting things', category: :list},
     {name: ' ', category: :list},
     {name: ' ', category: :list},
@@ -26,13 +26,13 @@ SECTION_CONFIG = {
     {name: 'Product', category: :product},
     {name: 'Product', category: :product}
 ],
-  # calendar: [
-  #   {name: 'headline', category: :p},
-  #   {name: 'sub-headline', category: :p},
-  #   {name: 'key-points', category: :p},
-  #   {name: 'button-text', category: :p},
-  #   {name: 'calendly-link', category: :link},
-  # ],
+  calendar: [
+    {name: 'headline', category: :p},
+    {name: 'sub-headline', category: :p},
+    {name: 'key-points', category: :p},
+    {name: 'button-text', category: :p},
+    {name: 'calendly-link', category: :link},
+  ],
  contact: [
     {name: 'Email', category: :email},
     {name: "Phone Number", category: :phone_number},
