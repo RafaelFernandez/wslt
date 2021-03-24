@@ -1,0 +1,15 @@
+<div class="d-flex pt-5">
+  <div class="catchy-info-left <%= 'is-hidden' if @section_catchy&.id.nil? %>" id="preview_catchy">>
+    <iframe data-preview-video width="560" height="315" src="<%= Section.get_content_of(section, "catchy", "video") %><%= section&.elements&.find_by(category: :video)&.youtube_vid_id() %>"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+  </div>
+
+  <div class="catchy-info-right d-flex flex-column justify-content-center pl-5">
+
+    <ul>
+      <% section&.elements&.where(category: :list)&.each do |el| %>
+        <li data-preview-interesting> <%= el.Section.get_content_of(section, "catchy", "interesting") %> </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

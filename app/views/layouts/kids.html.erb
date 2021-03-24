@@ -21,29 +21,11 @@
       <%= render 'sections/bio', section: @website&.section_named("bio") %>
 
 <%# CATCHY_INFO %>
-    <div class="d-flex pt-5">
-      <div class="catchy-info-left">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/YAVj0p87jMo<%#= section.elements.find_by(category: :video).youtube_vid_id() %>"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <%#= @website&.section_named("catchy")&.element_named("Profile Video") %>
-      </div>
 
-      <div class="catchy-info-right d-flex flex-column justify-content-center pl-5">
-        <%#= @website&.section_named("catchy")&.element_named("One") %>
-        <%#= @website&.section_named("catchy")&.element_named("Two") %>
-        <%#= @website&.section_named("catchy")&.element_named("Three") %>
-        <%#= @website&.section_named("catchy")&.element_named("Four") %>
-        <%#= @website&.section_named("catchy")&.element_named("Five") %>
-        <%#= @website&.section_named("catchy")&.element_named("subtitle") %>
-        <p>* Teacher for 10+ years</p>
-        <p>* Native English speaker</p>
-        <p>* British accent</p>
-        <p>* CELTA Oxford qualified</p>
-        <p>* Barcelona based</p>
-      </div>
-    </div>
+      <%= render 'sections/catchy', section: @website&.section_named("catchy") %>
 
 <%# CALENDAR %>
-    <%= render 'sections/bio', section: @website&.section_named("bio") %>
+      <%= render 'sections/bio', section: @website&.section_named("bio") %>
 
 <%#= PRICING %>
 
