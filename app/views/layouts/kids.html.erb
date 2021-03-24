@@ -91,5 +91,8 @@
 
       <%#= render "sections/contact", section: @website.section_named("contact") %>
     </div><%#= THIS CLOSES THE "CONTAINER" CLASS %>
+
+  <%# CONTACT %>
+    <%= render 'sections/contact', section: @website&.section_named("contact") %>
   </body>
 </html>

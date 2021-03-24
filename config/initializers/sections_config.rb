@@ -74,19 +74,19 @@ SECTION_CONFIG = {
       {name: "instagram", category: :link, label: "Instagram"},
       {name: "twitter", category: :link, label: "Twitter"},
       {name: "linkedin", category: :link, label: "LinkedIn"},
-      {name: "whatsapp", category: :phone_number, label: "WhatsApp"}, 
+      {name: "whatsapp", category: :phone_number, label: "WhatsApp"},
     ],
     default: {
-      email:"Your email",
-      phone: "Your phone number",
-      facebook: "Facebook",
-      instagram: "Instagram",
-      twitter: "Twitter",
-      linkedin: "LinkedIn",
-      whatsapp: "WhatsApp"
+      email:"rachel@gmail.com",
+      phone: "+34-123-123456",
+      facebook: "https://www.facebook.com/truonganxinh",
+      instagram: "https://instagram.com/mirandakerr?igshid=i8lvpcvwmmmi",
+      twitter: "https://twitter.com/HubblyPoppy",
+      linkedin: "https://www.linkedin.com/in/lutfur84/",
+      whatsapp: "+34-123-123456"
     }
   }
 }
-  
+
 
 
