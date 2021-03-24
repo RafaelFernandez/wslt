@@ -1,4 +1,5 @@
-<nav data-target="navbar.menu">
+<nav class="<%= action_name == 'home' ? 'position-fixed text-white': 'text-dark' %> shadow" data-navbar-target="menu">
+
   <div>
     <div class="logo navbar-lewagon">
       <%= link_to "/", class: "navbar-brand" do %>
@@ -6,40 +7,58 @@
         Hubbly
       <% end %>
     </div>
-    
+
     <!--button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon">xxxx</span>
+      <span class="navbar-toggler-icon"></span>
     </button-->
 
     <div class="menu navbar-collapse" id="navbarSupportedContent">
-      <ul>
+      <div class="header">
+        <% if action_name == 'home' %>
+          <%= link_to root_path(anchor: "pricing"), class: "header-link" do %>
+            <i class="fas fa-hand-holding-usd fa-lg pr-2"></i>Pricing
+          <% end %>
+        <% end %>
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Demo Sites", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Pricing", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Create a Website", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
+<!-- 
+          <% if action_name == 'index' %>
+            <a class="header-blank" href="#"></a>
+            <%= link_to '<i class="fab fa-accusoft fa-lg pr-2"></i>My Websites'.html_safe, "#", class: "header-link active" %>
+            <%= link_to '<i class="fas fa-pencil-alt fa-lg pr-2"></i>Lessons'.html_safe, "#", class: "header-link" %>
+            <%= link_to '<i class="fas fa-clipboard fa-lg pr-2"></i>Assignments'.html_safe, "#", class: "header-link" %>
+            <%= link_to '<i class="fas fa-cogs fa-lg pr-2"></i>Reports'.html_safe, "#", class: "header-link" %>
+          <% end %>
+-->
+
+
+          <%= link_to websites_path, class: "header-link" do %>
+            <i class="fas fa-democrat fa-lg pr-2"></i>Dashboard
+          <% end %>
+          <%= link_to new_website_path, class: "header-link" do %>
+            <i class="fas fa-plus fa-lg pr-2"></i>Create a Website
+          <% end %>
+      
+
+          <ul><li class="nav-item dropdown">
             <%= image_tag "https://avatars3.githubusercontent.com/u/4753571?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <!--%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %-->
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <% if current_user.admin %>
+                <%= link_to '<i class="fas fa-user-cog fa-lg pr-2"></i>'.html_safe + current_user.first_name + current_user.last_name, "#", class: "dropdown-item" %>
+              <% else %>
+                <%= link_to '<i class="fas fa-user fa-lg pr-2"></i>Create a Website'.html_safe, "#", class: "dropdown-item" %>
+              <% end %>
+              <%= link_to "Change your profile picture", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    
-    </div>
+          </li></ul>
 
+        <% else %>
+          <ul><li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li></ul>
+        <% end %>
+      </div>
+    </div>
   </div>
+
 </nav>

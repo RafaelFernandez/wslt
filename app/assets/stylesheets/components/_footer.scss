@@ -1,0 +1,64 @@
+.footer {
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 160px;
+  padding: 0px 50px;
+  color: #E5F6FE;
+  margin-top: 14vh;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: #EDDBFF;
+  opacity: 0.8;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  color: #e45a98;
+  box-shadow: 1px 1px 22px white;
+  border-radius: 50%;
+  //background-color: ivory;
+  opacity: 1;
+}
+
+.footer-contact {
+  padding-right: 40px;
+  display: flex;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.footer-contact a:hover {
+
+}
+
+
+
+.footer .fa-heart {
+  color: #D23333;
+}
+
+.float{
+	position:fixed;
+	width:45px;
+	height:45px;
+	bottom:24px;
+	right:15px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:32px;
+	box-shadow: 1px 1px 10px rgb(78, 78, 78);
+  z-index:100;
+}
+
+.my-float{
+	margin-top:7px;
+}
