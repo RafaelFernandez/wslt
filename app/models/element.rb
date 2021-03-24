@@ -5,13 +5,16 @@ class Element < ApplicationRecord
   has_one_attached :photo
 
   def youtube_vid_id()
-    url = URI.parse(self.value)
-    video_params = CGI.parse(url.query)
-
-    if video_params["v"]
-      video_params["v"].first
+    if self.value.size.positive?
+      url = URI.parse(self.value)
+      video_params = CGI.parse(url.query)
+      if video_params["v"]
+        video_params["v"].first
+      else
+        url.path[1..]
+      end
     else
-      url.path[1..]
+      ""
     end
   end
 end

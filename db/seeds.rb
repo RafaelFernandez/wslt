@@ -47,7 +47,7 @@ Element.create category: "product", name: "producttwo", value: "{type: 'group', 
 
 # CALENDAR SECTION
 calendar = Section.create( name: 'calendar', order: 5, website: website)
-Element.create category: "p", name: "headline", value: "LET'S TALK!", section: calendar
+Element.create category: "p", name: "headline", value: "Let's talk!", section: calendar
 Element.create category: "p", name: "subheadline", value: "I speak English, Spanish and French", section: calendar
 Element.create category: "p", name: "keypoints", value: "Book a time for us to talk, -Assess your level of English, -Set your learning goals", section: calendar
 Element.create category: "p", name: "buttontext", value: "View my calendar", section: calendar

@@ -31,8 +31,8 @@ SECTION_CONFIG = {
       {name: 'video', category: :video, label: "Upload an intro video"}
     ],
     default: {
-      interesting: "Tell us 5 interesting things about you",
-      video: "Upload an intro video"
+      interesting: "Teacher for 10+ years \n Native English speaker \n British accent",
+      video: ""
     }
   },
 
@@ -55,13 +55,13 @@ SECTION_CONFIG = {
     elements: [
       {name: 'headline', category: :p, label: "Your headline text"},
       {name: 'subheadline', category: :p, label: "What languages do you speak"},
-      {name: 'keypoints', category: :p, label: "Some key points why students should get in touch. One per line"},
+      {name: 'keypoints', category: :list, label: "Some key points why students should get in touch. One per line"},
       {name: 'calendlylink', category: :link, label: "Your Calendly link"},
     ],
     default: {
       headline: "Let's talk!",
       subheadline: "I speak English, Spanish and French",
-      keypoints: "Book a time for us to talk, Assess your level of English, Set your learning goals",
+      keypoints: "Book a time for us to talk \n Assess your level of English \n Set your learning goals",
       calendlylink: "Create and account with calendly.com"
     }
   },

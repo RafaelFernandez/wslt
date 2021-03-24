@@ -2,10 +2,10 @@
   <h2 data-preview-headline><%= Section.get_content_of(section, "calendar", "headline") %></h2>
   <p data-preview-subheadline><%= Section.get_content_of(section, "calendar", "subheadline") %></p>
   
-  <ul>
-    <li data-preview-keypoints><%= Section.get_content_of(section, "calendar", "keypoints") %></li>
-    <li data-preview-keypoints><%= Section.get_content_of(section, "calendar", "keypoints") %></li>
-    <li data-preview-keypoints><%= Section.get_content_of(section, "calendar", "keypoints") %></li>
+  <ul data-preview-keypoints>
+    <% Section.get_content_of(section, "calendar", "keypoints")&.split("\n")&.each do |el| %>
+        <li><%= el %></li>
+      <% end %>
   </ul>
 
   <a data-preview-calendlylink href="<%= Section.get_content_of(section, "calendar", "calendlylink") %>" class="btn yellow-curved">View my calendar</a>

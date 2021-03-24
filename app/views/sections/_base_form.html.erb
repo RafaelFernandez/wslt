@@ -4,10 +4,6 @@
       <%= p.input :name, as: :hidden, input_html: { value: section.elements[p.index].name } %>
       <%= p.input :label, as: :hidden, input_html: { value: section.elements[p.index].label } %>
       <%= p.input :category, as: :hidden, input_html: { value: section.elements[p.index].category } %>
-      
-
-      
-
 
       
       <% if section.elements[p.index].category == "img" %>
@@ -17,7 +13,7 @@
           <%= image_tag "",  class: "hidden", id: "photo-preview", data: {target: 'upload.image'} %>
         </div>
       <% else %>
-        <%= p.input :value, label: section.elements[p.index].label, 
+        <%= p.input :value, as: section.elements[p.index].category.to_sym == :list ? :text : :string, label: section.elements[p.index].label, 
           input_html: {data: {"preview-target": "data-preview-#{section.elements[p.index].name.downcase}", action: "input->preview#updatePreview", "input-type": section.elements[p.index].category}} %>
       <% end %>
     <% end %>

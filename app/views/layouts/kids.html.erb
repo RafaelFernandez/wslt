@@ -25,71 +25,16 @@
       <%= render 'sections/catchy', section: @website&.section_named("catchy") %>
 
 <%# CALENDAR %>
-      <%= render 'sections/bio', section: @website&.section_named("bio") %>
+      <%= render 'sections/calendar', section: @website&.section_named("calendar") %>
 
 <%#= PRICING %>
 
-      <div class="pricing-top d-flex flex-column justify-content-center text-center pt-5">
-        <%#= @website&.section_named("price_info")&.element_named("title") %>
-        <%#= @website&.section_named("price_info")&.element_named("teaser") %>
+      <%= render 'sections/pricing', section: @website&.section_named("pricing") %>
 
-        <h2>Pricing</h2>
-        <h3>Book 10+ hours and get 5% off</h3>
-      </div>
+<%#= CONTACT %>
 
-
-      <div class="product-cards d-flex">
-
-<%#= FIRST PRODUCT ONE-TO-ONE CLASSES %>
-        <div class="product-card text-center">
-        <%#= @website&.section_named("price_info")&.element_named("Product") ???????? how does this work???? value: "{type: 'one 2 one', offline_price: '20 Eur', online_price: '10 Eur' }" %>
-          <h4>One-to-one</h4>
-            <div class="product-pricing d-flex justify-content-center">
-                <div class="hubbly-small-left d-flex justify-content-center">
-                  <div class="pricing-hubbly-content d-flex flex-column justify-content-center text-center">
-                    <p>Online</p>
-                    <h4>15€</h4>
-                  </div>
-                </div>
-
-                <div class="hubbly-small-right d-flex justify-content-center">
-                  <div class="pricing-hubbly-content d-flex flex-column justify-content-center text-center">
-                    <p>In person</p>
-                    <h4>25€</h4>
-                  </div>
-                </div>
-            </div>
-        </div>
-
-<%#= SECOND PRODUCT EXAM PREP CLASSES %>
-        <div class="product-card text-center">
-        <%#= @website&.section_named("price_info")&.element_named("Product") ???????? how does this work???? value: "{type: 'one 2 one', offline_price: '20 Eur', online_price: '10 Eur' }" %>
-          <h4>Exam prep classes</h4>
-            <div class="product-pricing d-flex">
-                <div class="hubbly-small-left d-flex justify-content-center">
-                  <div class="pricing-hubbly-content d-flex flex-column justify-content-center text-center">
-                    <p>Online</p>
-                    <h4>20€</h4>
-                  </div>
-                </div>
-
-                <div class="hubbly-small-right d-flex justify-content-center">
-                  <div class="pricing-hubbly-content d-flex flex-column justify-content-center text-center">
-                    <p>In person</p>
-                    <h4>25€</h4>
-                  </div>
-                </div>
-            </div>
-        </div>
-      </div>
-
-      <div class="pricing-bottom text-center">
-      <%#= @website&.section_named("price_info")&.element_named("policy") %>
-        <p>Group classes are for a max of 2 students online and 6 students in person</p>
-        <p>All prices are quoted per student per hour</p>
-      </div>
-
-      <%#= render "sections/contact", section: @website.section_named("contact") %>
+      <%= render "sections/contact", section: @website.section_named("contact") %>
+    
     </div><%#= THIS CLOSES THE "CONTAINER" CLASS %>
   </body>
 </html>
