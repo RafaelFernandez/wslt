@@ -4,7 +4,6 @@
   </div>
 
   <div class="catchy-info-right d-flex flex-column justify-content-center pl-5 <%= 'is-hidden' if @section_catchy&.id.nil? %>" id="preview_catchy">
-
     <ul data-preview-interesting>
       <% Section.get_content_of(section, "catchy", "interesting")&.split("\n")&.each do |el| %>
         <li><%= el %></li>
