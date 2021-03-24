@@ -1,14 +1,45 @@
 <div class="container">
-  <h2 mt-5>Website Index</h2>
-  <h3>You are
-  <%= current_user.admin ? "an admin" : "a normal user" %>
-  </h3>
 
-  <% @websites.each do |we| %>
-  <%= we.name %> -
-  <%= User.find(we.user_id).first_name %> -
-  <%= link_to 'Show', we %>
-  <%= link_to 'Edit', edit_website_path(we) %>
-  <br>
-  <% end %>
+<div class="wrapper">
+
+<!-- 
+  <div class="left-side">
+    <%= link_to '<i class="fab fa-accusoft fa-2x pr-2"></i>'.html_safe, "#", class: "left-links active" %>
+    <%= link_to '<i class="fas fa-pencil-alt fa-lg pr-2"></i>'.html_safe, "#", class: "left-links" %>
+    <%= link_to '<i class="fas fa-clipboard fa-lg pr-2"></i>'.html_safe, "#", class: "left-links" %>
+    <%= link_to '<i class="fas fa-cogs fa-lg pr-2"></i>'.html_safe, "#", class: "left-links" %>
+  </div>
+-->
+ 
+
+    <div class="web-box row">
+      <% @websites.each do |we| %>
+        <div class="col-12 col-md-6 mb-3">
+          <div class="webs-card">
+            <div class="webs-card-images">
+              <img class="web-img" src="https://euroamerican.dk/photo/wslt/tempdesign<%= we.id %>.png" alt="" />
+            </div>
+            <div class="webs-card-text">
+              <div class="title"><%= we.name %></div>
+              <div class="subtitle">My great looking test site for teaching english to dogs</div>
+            </div>
+            <div class="webs-card-links">
+              <%= link_to edit_website_path(we), class: "webs-card-view" do %>
+                <i class="far fa-eye fa-lg pr-2"></i>
+              <% end %>
+              <%= link_to edit_website_path(we), class: "webs-card-edit" do %>
+                <i class="fas fa-quidditch fa-lg pr-2"></i>
+              <% end %>
+              <%= link_to edit_website_path(we), class: "webs-card-delete" do %>
+                <i class="fas fa-trash-alt fa-lg pr-2"></i>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+ 
+
+</div>
 </div>

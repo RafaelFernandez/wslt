@@ -1,39 +1,42 @@
 <div class="row col-12 col-md-12">
   <div class="container px-3 col-md-4 d-flex flex-column justify-content-start" data-controller="addsection">
-
-
-
+    
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title" id="exampleModalLabel">Please Select a Section</h4>
+          <div class="modal-header">            
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-
-          <div class="modal-body text-center">
-            <div class="d-flex"></div>
-            <a href="#" data-action="click->addsection#addHero" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Hero Section</a>
-            <a href="#" data-action="click->addsection#addBio" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Bio Section</a>
-            <a href="#" data-action="click->addsection#addCatchy" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Catchy Section</a>
-            <hr>
-            <a href="#" data-action="click->addsection#addPricing" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Pricing Section</a>
-            <a href="#" data-action="click->addsection#addCalendar" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Calendar Section</a>
-            <a href="#" data-action="click->addsection#addContact" role="button" class="btn btn-warning popover-test m-2" title="Popover title" data-content="Popover body content is set in this attribute.">Contact Section</a>
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <div class="modal-body">
+            <% section_details = {
+                hero: { icon: 'fas fa-award', desc: 'Make a great first impression with your value proposition.' },
+                bio: { icon: 'fas fa-user-graduate', desc: 'Let us know something about you.' },
+                catchy: { icon: 'fas fa-bell', desc: 'Show off your main achiviements.' },
+                pricing: { icon: 'fas fa-money-bill', desc: 'Ask for the value you give.' },
+                calendar: { icon: 'fas fa-calendar-alt', desc: 'Tell us where you are available.' },
+                contact: { icon: 'far fa-envelope', desc: 'How can people contact you?' }
+               }               
+            %>
+            <% SECTION_CONFIG.keys.each do |section_name| %>            
+              <div class="d-flex flex-column card-modal" data-action="click->addsection#add<%= section_name.capitalize %>" role="button">
+                <div class="d-flex align-items-center">
+                  <i class="<%= section_details[section_name][:icon] %>"></i>
+                  <h4 class="mb-0 ml-3"><%= section_name.capitalize %></h4>
+                </div>
+                <div><p><%= section_details[section_name][:desc] %></p></div>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="accordion">
 
+
+    <div id="accordion">    
       <% SECTION_CONFIG.keys.each do |section_name| %>
         <% current_section = @sections_map[section_name]%>
 
@@ -57,7 +60,7 @@
 
     <!-- Button trigger modal -->
       <button type="button" class="btn-form mt-0" data-toggle="modal" data-target="#exampleModal">
-        Add New Section
+        + Add Content
       </button>
       </div>
   </div>
