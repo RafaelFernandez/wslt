@@ -1,6 +1,10 @@
-<div class="banner" data-preview-image style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path section&.elements&.find_by(category: :img)&.photo&.key || ''%>);">
-  <div class="container">
-    <h1 data-preview-title><%= section&.elements&.find_by(category: :h1)&.value %></h1>
-    <p data-preview-subtitle><%= section&.elements&.find_by(category: :p)&.value %></p>
+<header class="d-flex justify-content-center align-items-center <%= 'is-hidden' if @section_hero&.id.nil? %>" id="preview_hero">
+  <div class="kids_banner d-flex justify-content-center align-items-center w-100" style="background-image: url(https://res.cloudinary.com/dwsfhweeg/image/upload/v1616411138/Design_1_1_oc0d4b.png")>    
+    <div class="kids-banner-content text-center">
+      <h1 data-preview-title><%= Section.get_content_of(section, "Hero", "title") %></h1>
+      <h2 data-preview-subtitle><%= Section.get_content_of(section, "Hero", "subtitle") %></h2>
+      <p data-preview-text><%= Section.get_content_of(section, "Hero", "text") %></p>
+      <a href="#" class="btn yellow-curved">Let's talk!</a>
+    </div>
   </div>
-</div>
+</header>
