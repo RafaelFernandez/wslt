@@ -3,7 +3,7 @@ import { Controller } from "stimulus"
 export default class extends Controller {
 
   static targets = ['card_hero', 'card_bio', 'card_catchy', 'card_pricing', 'card_contact']
-
+  // data-addsection-target=
   addHero(event) {
     event.preventDefault();
     this.card_heroTarget.classList.remove('is-hidden')

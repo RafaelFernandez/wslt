@@ -1,11 +1,11 @@
 <div class="row col-12 col-md-12">
-  <div class="container px-3 col-md-4 d-flex flex-column justify-content-start" data-controller="addsection">
+  <div class="container mt-4 px-3 col-md-4 d-flex flex-column justify-content-start" data-controller="addsection">
     
     <!-- Modal -->
     <div class="modal" id="exampleModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">            
+          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -40,12 +40,14 @@
       <% SECTION_CONFIG.keys.each do |section_name| %>
         <% current_section = @sections_map[section_name]%>
 
-          <div class="card-form <%= 'is-hidden' if current_section.id.nil? %> " data-addsection-target="card_<%= section_name %>" data-name="<%= section_name %>">
-            <div class="card-header d-flex justify-content-between">
+          <div data-controller="collapse" class="card-form <%= 'is-hidden' if current_section.id.nil? %> " data-addsection-target="card_<%= section_name %>" data-name="<%= section_name %>">
+
+            <button type="button" data-action="collapse#toggleCard" data-collapse-target="toggle" class="collapsible card-header d-flex justify-content-between">
               <h4 class="font-weight-bold m-0"><%= current_section.name.capitalize %></h4>
-              <p class="collapsed" data-toggle="collapse" data-target=".collapse_<%= section_name %>" aria-expanded="false" aria-controls="collapseHero"></p>
-            </div>
-            <div class="collapse_<%= section_name %> collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <p data-collapse-target="arrow" class="" data-toggle="" data-target=".collapse_<%= section_name %>" aria-expanded="false" aria-controls="collapseHero"></p>
+            </button>
+            
+            <div class="content collapse_<%= section_name %> collapse" aria-labelledby="headingTwo" data-parent="#accordion">
               <div class="card-body">
                 <% if section_name.to_s == 'pricing' %>
                   <%= render "sections/form_pricing", section: current_section, website: @website %>
@@ -54,12 +56,14 @@
                 <% end %>
               </div>
             </div>
+
+
           </div>
       <% end %>
 
 
     <!-- Button trigger modal -->
-      <button type="button" class="btn-form mt-0" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="btn-form" data-toggle="modal" data-target="#exampleModal">
         + Add Content
       </button>
       </div>
