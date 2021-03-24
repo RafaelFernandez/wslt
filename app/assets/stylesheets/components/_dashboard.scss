@@ -1,0 +1,154 @@
+$font-family: "Nunito", "Helvetica", "sans-serif";
+$bg-color: #252954;
+$body-color: #9b9ca7;
+$main-bg: #0e0e23;
+:root {
+ --delay: 0s;
+}
+
+* {
+// outline: none;
+}
+
+.hidden {
+ //display: none !important;
+}
+
+.wrapper {
+ // display: flex;
+ // height: 100vh;
+ // width: 100vw;
+ // overflow: hidden;
+ margin: 0 4vw;
+}
+
+.left-side {
+  height: 100%;
+  width: 16vw;
+  position: sticky;
+  z-index: 11;
+  top: 72px;
+  left: 0;
+  //overflow-x: hidden;
+  //padding-top: 20px;
+  color: rgba(26, 29, 58, 1) 92%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  animation: left 1s var(--delay) both;
+}
+
+@keyframes left {
+ 0% {
+  transform: translateX(-30px);
+  opacity: 0;
+ }
+ 100% {
+  opacity: 0.8;
+  transform: none;
+ }
+}
+
+.web-box {
+ margin-top: 16px;
+}
+
+.webs-card {
+  background: rgba(26, 29, 58, 1);
+  padding: 20px;
+  //width: 70%;
+  //height: 292px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  opacity: 0.8;
+}
+
+.webs-card:hover {
+ 
+  opacity: 1;
+}
+
+.web-img {
+  height: 252px;
+  object-fit: cover;
+  
+  border: 1px solid #bebec4;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 1500px) {
+ .wrapper {
+  max-width: 1200px;
+ }
+}
+
+
+@media screen and (max-width: 1020px) {
+
+}
+
+@media screen and (max-width: 930px) {
+ .web-img {
+  display: none;
+ }
+}
+
+@media screen and (max-width: 850px) {
+.web-box {
+  margin-left: 0;
+  margin-top: 20px;
+ }
+.left-side {
+  display: none;
+ }
+}
+
+@media screen and (max-width: 720px) {
+
+}
+
+@media screen and (max-width: 420px) {
+ .webs-card + .webs-card {
+  display: none;
+ }
+}
+
+.web-box {
+ animation: top 0s var(--delay) both;
+}
+
+.title {
+  color: aliceblue;
+  font-size: 20px;
+}
+
+.subtitle {
+  color: aliceblue;
+}
+
+.left-links {
+  font-size: 22px;
+  padding: 20px 20px;
+  color: #1a1d3a;
+  list-style: none;
+  //background: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  text-align: right;
+  //justify-content: flex-end;
+  //transition: 0.4s;
+  text-decoration: none;
+}
+
+.webs-card-links{
+  
+  
+}
+
+.webs-card-view:hover, .webs-card-edit:hover, .webs-card-delete:hover {
+  text-decoration: none !important;
+}

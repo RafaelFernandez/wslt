@@ -1,5 +1,7 @@
+$main-bg: #0e0e23;
+
 .logo {
-      position: fixed;
+      //position: fixed;
       float: left;
       margin: 8px 8px;
       //color: #fff;
@@ -11,6 +13,7 @@ nav {
       //position: fixed;
       width: 100%;
       z-index: 11;
+      //height: 70px;
 }
 
 nav ul {
@@ -65,4 +68,78 @@ nav.dark {
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.demo::before {
+  //padding: 0px 0px;
+  font-family: "Font Awesome 5 Free"; 
+  font-size: 17px;
+  //font-weight: 900; 
+  content: "\f06e";
+}
+
+.header {
+  //background-color: $main-bg;
+ //box-shadow: 10px 0px 2px $main-bg;
+ //width: 100%;
+ animation: top 1s both;
+ display: flex;
+ align-items: center;
+ justify-content: flex-end;
+ font-size: 16px;
+ white-space: nowrap;
+ position: sticky;
+ top: 0;
+ left: 0;
+ z-index: 12;
+ &-link {
+  color: inherit !important;
+  text-decoration: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+  position: relative;
+  transition: 0.3s;
+  //border-bottom: 5px solid transparent;
+  &.active,
+  &:hover:after {
+  text-decoration: none;
+  //  border-bottom: 5px solid #17A2B8;
+  // pseudo elements -after
+  background: #17A2B8;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  }
+ }
+}
+
+.header-blank {
+  width: 14vw;
+}
+
+.dropdown-item {
+  z-index: 100;
+}
+
+.header-link {
+  list-style: none;
+  background: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  //color: #fff;
+  text-align: right;
+  justify-content: flex-end;
+  transition: 0.4s;
+}
+
+.text-white{
+  color: whitesmoke !important;
+}
+
+.text-dark {
+  color: #1a1d3a !important;
 }
