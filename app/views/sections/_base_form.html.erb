@@ -2,15 +2,18 @@
   <%= simple_form_for [website, section] do |m| %>
     <%= m.simple_fields_for :elements do |p| %>
       <%= p.input :name, as: :hidden, input_html: { value: section.elements[p.index].name } %>
+      <%= p.input :label, as: :hidden, input_html: { value: section.elements[p.index].label } %>
       <%= p.input :category, as: :hidden, input_html: { value: section.elements[p.index].category } %>
+
+      
       <% if section.elements[p.index].category == "img" %>
         <p class="font-weight-bold"><%= section.elements[p.index].name %></p>
         <div class="d-flex justify-content-between w-100" data-controller="upload">
-          <%= p.input :photo, as: :file, input_html: { class: 'hidden', id: 'photo-input', data: {action: 'change->preview#getImageUrl', 'input-type': 'background_image', "preview-target": "data-preview-#{section.elements[p.index].name.downcase}"} }, label_html: { class: 'upload-photo w-100', data: {target: 'preview.label'}}, label: "Choose file" %>        
+          <%= p.input :photo, as: :file, input_html: { class: 'hidden', id: 'photo-input', data: {action: 'change->preview#getImageUrl', 'input-type': 'image', "preview-target": "data-preview-#{section.elements[p.index].name.downcase}"} }, label_html: { class: 'upload-photo w-100', data: {target: 'preview.label'}}, label: "Choose file" %>        
         </div>
       <% else %>
-        <%= p.input :value, label: section.elements[p.index].name, 
-          input_html: {data: {"preview-target": "data-preview-#{section.elements[p.index].name.downcase}", action: "input->preview#updatePreview"}} %>
+        <%= p.input :value, as: section.elements[p.index].category.to_sym == :list ? :text : :string, label: section.elements[p.index].label, 
+          input_html: {data: {"preview-target": "data-preview-#{section.elements[p.index].name.downcase}", action: "input->preview#updatePreview", "input-type": section.elements[p.index].category}} %>
       <% end %>
     <% end %>
     <%= m.input :name, as: :hidden, input_html: {value: section.name} %>

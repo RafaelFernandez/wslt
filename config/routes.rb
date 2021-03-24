@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :websites, only: [:index, :create, :new, :show, :edit] do
 
     get 'builder', to: 'websites#builder'
-    resources :sections, only: [:index, :create, :new, :show]
+    resources :sections, only: [:index, :create, :update, :new, :show]
   end
 end

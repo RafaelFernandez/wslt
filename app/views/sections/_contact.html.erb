@@ -1,11 +1,33 @@
-<div class="container mb-3">
-  <h1>Contact section</h1>
+<div class="d-flex pt-5 <%= 'is-hidden' if @section_contact&.id.nil? %>" id="preview_contact">
 
-  <a href="<%= section.elements.find_by(name: 'Email').value %>"><%= section.elements.find_by(name: 'Email').value %></a>
-  <p><%= section.elements.find_by(name: "Phone Number").value %></p>
-  <a href="<%= section.elements.find_by(name: 'Facebook').value %>"><%= section.elements.find_by(name: 'Facebook').value %></a>
-  <a href="<%= section.elements.find_by(name: 'Instagram').value %>"><%= section.elements.find_by(name: 'Instagram').value %></a>
-  <a href="<%= section.elements.find_by(name: 'Twitter').value %>"><%= section.elements.find_by(name: 'Twitter').value %></a>
-  <a href="<%= section.elements.find_by(name: 'Whatsapp').value %>"><%= section.elements.find_by(name: 'Whatsapp').value %></a>
+  <a data-preview-email href="mailto:<%= Section.get_content_of(section, "contact", "email") %>">
+    <i class="far fa-envelope-open"></i>
+    <%= Section.get_content_of(section, "Contact", "email") %>
+  </a>
+
+  <a data-preview-phone href="tel:<%= Section.get_content_of(section, "contact", "phone") %>">
+    <%= Section.get_content_of(section, "contact", "phone") %>
+  </a>
+
+  <a data-preview-facebook href="<%= Section.get_content_of(section, "contact", "facebook") %>">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <a data-preview-instagram href="<%= Section.get_content_of(section, "contact", "instagram") %>">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a data-preview-twitter href="<%= Section.get_content_of(section, "contact", "twitter") %>">
+    <i class="fab fa-twitter"></i>
+  </a>
+
+  <a data-preview-linkedin href="<%= Section.get_content_of(section, "contact", "linkedin") %>">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+
+  <a data-preview-whatsapp href="<%= Section.get_content_of(section, "contact", "whatsapp") %>">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 </div>
+
 
