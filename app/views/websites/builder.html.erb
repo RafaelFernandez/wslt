@@ -3,32 +3,36 @@
     
     <!-- Modal -->
     <div class="modal" id="exampleModal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">            
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body p-5">
             <% section_details = {
                 hero: { icon: 'fas fa-award', desc: 'Make a great first impression with your value proposition.' },
                 bio: { icon: 'fas fa-user-graduate', desc: 'Let us know something about you.' },
-                catchy: { icon: 'fas fa-bell', desc: 'Show off your main achiviements.' },
+                catchy: { icon: 'fas fa-bell', desc: 'Show off your main achivements.' },
                 pricing: { icon: 'fas fa-money-bill', desc: 'Ask for the value you give.' },
                 calendar: { icon: 'fas fa-calendar-alt', desc: 'Tell us where you are available.' },
                 contact: { icon: 'far fa-envelope', desc: 'How can people contact you?' }
                }               
             %>
-            <% SECTION_CONFIG.keys.each do |section_name| %>            
-              <div class="d-flex flex-column card-modal" data-action="click->addsection#add<%= section_name.capitalize %>" role="button">
-                <div class="d-flex align-items-center">
-                  <i class="<%= section_details[section_name][:icon] %>"></i>
-                  <h4 class="mb-0 ml-3"><%= section_name.capitalize %></h4>
-                </div>
-                <div><p><%= section_details[section_name][:desc] %></p></div>
-              </div>
-            <% end %>
+            <div class="row">
+              <% SECTION_CONFIG.keys.each do |section_name| %>  
+                <div class="col-md-6">         
+                  <div class="d-flex flex-column shadow card-modal" data-action="click->addsection#addSection" data-addsection-target="section" data-name="<%= section_name %>" role="button">
+                    <div class="d-flex align-items-center">
+                      <i class="<%= section_details[section_name][:icon] %>"></i>
+                      <h4 class="mb-0 ml-3"><%= section_name.capitalize %></h4>
+                    </div>
+                    <div><p><%= section_details[section_name][:desc] %></p></div>
+                  </div>
+                </div> 
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
