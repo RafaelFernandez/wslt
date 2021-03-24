@@ -6,6 +6,8 @@ export default class extends Controller {
     const previewTarget = event.target.dataset.previewTarget
     const target = document.querySelector(`[${previewTarget}]`)
 
+    console.log(target)
+    
     if (inputType === 'background_image') {
       target.style.backgroundImage = `url(${imageUrl})`
     } else if (inputType === 'image') {
@@ -14,9 +16,6 @@ export default class extends Controller {
         target.setAttribute("href", event.target.value);
     } else if (inputType === 'video') {
       target.innerHTML = this.generateYouTubeIframe(event.target.value)
-      // target.src = event.target.value;
-      // target.classList.remove("hidden")
-      // target.contentWindow.location.reload()
     } else if (inputType === 'list') {
       const listItems = event.target.value.split("\n").map(li=>`<li>${li}</li>`)
       target.innerHTML = listItems.join("");

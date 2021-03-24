@@ -9,7 +9,12 @@ class Section < ApplicationRecord
   end
 
   def element_named(name)
-    elements&.find_by(name: name)&.value
+    element = elements&.find_by(name: name) 
+    unless element.nil? 
+      return element.category == :product ? eval(element.value) : element.value
+    end
+
+    nil
   end
 
   def self.get_content_of(section, section_name, element_name)
@@ -17,7 +22,7 @@ class Section < ApplicationRecord
     # raise if section_name == 'catchy'
     if section&.element_named(element_name).present?
       # return the content
-      section&.element_named(element_name)
+      section&.element_named(element_name).to_h
     else
       # return default content
       SECTION_CONFIG[section_name.downcase.tr_s(" ", "_").to_sym][:default][element_name.downcase.tr_s(" ", "_").to_sym]

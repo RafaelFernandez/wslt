@@ -42,8 +42,8 @@ Element.create(category: 'img', name: 'picture', value: 'https://avatars3.github
 price_info = Section.create( name: 'pricing', order: 4, website: website)
 Element.create category: "h2", name: "teaser", value: "Book 10+ hours and get 5% off", section: price_info
 Element.create category: "p", name: "policy", value: "Group classes are for a max of 2 students ", section: price_info
-Element.create category: "product", name: "productone", value: "{type: 'one 2 one', offline_price: '20 Eur', online_price: '10 Eur' }", section: price_info
-Element.create category: "product", name: "producttwo", value: "{type: 'group', offline_price: '20 Eur', online_price: '10 Eur' }", section: price_info
+Element.create category: "product", name: "product1", value: "{type: 'one 2 one', offline_price: '20 Eur', online_price: '10 Eur' }", section: price_info
+Element.create category: "product", name: "product2", value: "{type: 'group', offline_price: '20 Eur', online_price: '10 Eur' }", section: price_info
 
 # CALENDAR SECTION
 calendar = Section.create( name: 'calendar', order: 5, website: website)

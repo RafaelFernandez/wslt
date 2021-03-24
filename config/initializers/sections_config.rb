@@ -39,15 +39,15 @@ SECTION_CONFIG = {
   pricing: {
     elements: [
       {name: 'teaser', category: :h2, label: "Do you offer a discount?"},
-      {name: 'policy', category: :p, label: "Is your price per student per hour?"},
-      {name: 'productone', category: :product, label: "One-to-one classes"},
-      {name: 'producttwo', category: :product, label: "Group classes"},
+      {name: 'policy', category: :list, label: "Is your price per student per hour?"},
+      {name: 'product1', category: :product, label: "One-to-one classes"},
+      {name: 'product2', category: :product, label: "Group classes"},
     ],
     default: {
       teaser: "Book 10+ hours and get 5% off",
-      policy: "Group classes are for a max of 2 students online and 6 people in person",
-      productone: "General English classes",
-      producttwo: "Business English classes"
+      policy: "Group classes are for a max of 2 students online and 6 people in person \n Gotcha?",
+      product1: {type: 'one 2 one', offline_price: '20 Eur', online_price: '10 Eur'},
+      product2: {type: 'one 2 one', offline_price: '20 Eur', online_price: '10 Eur'}
     }
   },
 

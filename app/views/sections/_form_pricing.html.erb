@@ -1,4 +1,4 @@
-<%= form_tag section.id.nil? ? website_sections_path(website) : website_section_path(website, section), method: section.id.nil? ? :post : :patch do %>
+<%= form_tag section.id.nil? ? website_sections_path(website) : website_section_path(website, section), method: section.id.nil? ? :post : :patch, data: {controller: 'preview'} do %>
   <%= hidden_field_tag "section[name]", 'pricing' %>
   <% section.elements.each_with_index do |el, i| %>
 
@@ -11,15 +11,20 @@
         <%= label_tag 'Service name / offline price / online price' %>
 
         <div class="d-flex">    
-          <%= text_field_tag "section[elements_attributes][#{i}][value][type]", eval(el.value || '{}')['type'], class: 'form-control' %>
+          <%= text_field_tag "section[elements_attributes][#{i}][value][type]", eval(el.value || '{}')['type'], class: 'form-control', data: {"preview-target": "data-preview-product#{i - 1}-type", action: "input->preview#updatePreview" }%>
 
-          <%= number_field_tag "section[elements_attributes][#{i}][value][offline_price]", eval(el.value || '{}')['offline_price'], class: 'form-control', placeholder: 'offline' %>
+          <%# i - 2 to reference the correct product element PLEASE CHANGE THIS SOONER RATHER THAN LATER %>
+          <%= number_field_tag "section[elements_attributes][#{i}][value][offline_price]", eval(el.value || '{}')['offline_price'], class: 'form-control', placeholder: 'offline', data: {"preview-target": "data-preview-product#{i - 1}-offline-price", action: "input->preview#updatePreview" } %>
 
-          <%= text_field_tag "section[elements_attributes][#{i}][value][online_price]", eval(el.value || '{}')['online_price'], class: 'form-control', placeholder: 'online' %>
+          <%= text_field_tag "section[elements_attributes][#{i}][value][online_price]", eval(el.value || '{}')['online_price'], class: 'form-control', placeholder: 'online', data: {"preview-target": "data-preview-product#{i - 1}-online-price", action: "input->preview#updatePreview" } %>
         </div>
       <% else %>
         <%= label_tag el.label %>
-        <%= text_field_tag "section[elements_attributes][#{i}][value]", el.value, class: 'form-control' %>
+        <% if el.category.to_sym == :list %>
+          <%= text_area_tag "section[elements_attributes][#{i}][value]", el.value, class: 'form-control', data: {"input-type": el.category, "preview-target": "data-preview-#{el.name}", action: "input->preview#updatePreview" } %>
+        <% else %>
+          <%= text_field_tag "section[elements_attributes][#{i}][value]", el.value, class: 'form-control', data: {"input-type": el.category, "preview-target": "data-preview-#{el.name}", action: "input->preview#updatePreview" } %>
+        <% end %>
       <% end %>
     </div>
   <% end %>
