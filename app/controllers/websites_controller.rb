@@ -42,7 +42,7 @@ class WebsitesController < ApplicationController
   end
 
   def update
-    @website = Website.find(params[:id])
+    @website = Website.friendly.find(params[:id])
     authorize @website
     if @website.update(website_params)
       redirect_to website_path(@website), notice: 'Website was updated'
