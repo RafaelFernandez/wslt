@@ -1,6 +1,6 @@
 <div class="d-flex pt-5 <%= 'is-hidden' if section&.id.nil? %>" id="preview_catchy">
   <div data-preview-video class="catchy-info-left">
-    <iframe class="<%= 'hidden' if Section.get_content_of(section, "catchy", "video").size.positive? %>"  width="560" height="315" src="<%= Section.get_content_of(section, "catchy", "video") %><%= section&.elements&.find_by(category: :video)&.youtube_vid_id() %>"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe class="<%= 'hidden' if Section.get_content_of(section, "catchy", "video").size.positive? %>"  width="560" height="315" src="https://www.youtube.com/embed/<%= section&.elements&.find_by(category: :video)&.youtube_vid_id() %>"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 
   <div class="catchy-info-right d-flex flex-column justify-content-center pl-5" id="preview_catchy">

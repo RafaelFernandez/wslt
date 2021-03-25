@@ -47,6 +47,17 @@ ActiveRecord::Schema.define(version: 2021_03_25_100820) do
     t.index ["section_id"], name: "index_elements_on_section_id"
   end
 
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
   create_table "sections", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -95,6 +106,8 @@ ActiveRecord::Schema.define(version: 2021_03_25_100820) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "published", default: false
+    t.string "slug"
+    t.index ["slug"], name: "index_websites_on_slug", unique: true
     t.index ["theme_id"], name: "index_websites_on_theme_id"
     t.index ["user_id"], name: "index_websites_on_user_id"
   end
