@@ -31,15 +31,23 @@ class WebsitesController < ApplicationController
 
   def show
     @website = Website.friendly.find(params[:id])
-    authorize @website
-    render layout: @website.theme.name
+    begin
+      authorize @website
+    rescue Pundit::NotAuthorizedError
+      render file: "#{Rails.root}/public/404.html", layout: false, status: 404
+    else
+      # Everyone can see the page if it is published
+      render layout: @website.theme.name
+    end
   end
 
   def update
+    @website = Website.find(params[:id])
+    authorize @website
     if @website.update(website_params)
-      redirect_to @website, notice: 'Website was updated'
+      redirect_to website_path(@website), notice: 'Website was updated'
     else
-      render :edit
+      redirect_to website_builder(@website)
     end
   end
 
@@ -92,6 +100,6 @@ class WebsitesController < ApplicationController
   end
 
   def website_params
-    params.require(:website).permit(:name, :domain, :theme_id)
+    params.require(:website).permit(:name, :domain, :theme_id, :published)
   end
 end

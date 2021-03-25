@@ -14,7 +14,7 @@ class WebsitePolicy < ApplicationPolicy
   end
 
   def show?
-    @user == @record.user || user.admin
+    @user == @record.user || user.admin || @record.published
   end
 
   def update?
