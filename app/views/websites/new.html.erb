@@ -9,7 +9,7 @@
         <%= f.input :name, label: "Write your website name" %>
         <%= f.input :domain, collection: Website::DOMAIN_OPTIONS %>
       <h2>Choose your template</h2>
-        <%= f.input :theme_id, collection: Website::THEMES.map { |t| [t, Theme.find_by(name: t).id]} %>
+        <%= f.input :theme_id, collection: @themes %>
 
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>

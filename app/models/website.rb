@@ -2,7 +2,7 @@ require "open-uri"
 
 class Website < ApplicationRecord
   DOMAIN_OPTIONS = ['englishlanguageteacher.com', 'spanishlanguageteacher.com']
-  THEMES = ['kids']
+
 
   belongs_to :user
   belongs_to :theme, optional: true
