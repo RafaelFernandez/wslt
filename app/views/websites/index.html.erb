@@ -19,15 +19,15 @@
             <div class="webs-card-images">
               <img class="web-img" src="https://euroamerican.dk/photo/wslt/tempdesign<%= we.id %>.png" alt="" />
             </div>
-            <div class="webs-card-text">
+            <div class="webs-card-text mt-2">
               <div class="title"><%= we.name %></div>
               <div class="subtitle">My great looking test site for teaching english to dogs</div>
             </div>
-            <div class="webs-card-links">
-              <%= link_to edit_website_path(we), class: "webs-card-view" do %>
+            <div class="webs-card-links mt-2">
+              <%= link_to website_path(we), class: "webs-card-view" do %>
                 <i class="far fa-eye fa-lg pr-2"></i>
               <% end %>
-              <%= link_to edit_website_path(we), class: "webs-card-edit" do %>
+              <%= link_to website_builder_path(we), class: "webs-card-edit" do %>
                 <i class="fas fa-quidditch fa-lg pr-2"></i>
               <% end %>
               <%= link_to edit_website_path(we), class: "webs-card-delete" do %>

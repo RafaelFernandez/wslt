@@ -4,8 +4,7 @@ export default class extends Controller {
   static targets = ['menu']
 
   connect() {
-
-    window.addEventListener("scroll", this.onScroll);
+  window.addEventListener("scroll", this.onScroll);
     this.toggleNavBg()
   }
 
