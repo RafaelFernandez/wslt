@@ -56,7 +56,11 @@ nav.dark {
   font-family: "Nunito", "Helvetica", "sans-serif";
 }
 
-
+.navbar-brand-white {
+ background: -webkit-linear-gradient(305deg, #E5F6FE 1%, #ffffff 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .navbar-lewagon {
   justify-content: space-between;

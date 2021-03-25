@@ -105,8 +105,8 @@ ActiveRecord::Schema.define(version: 2021_03_25_100820) do
     t.bigint "theme_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "published", default: false
     t.string "slug"
+    t.boolean "published", default: false
     t.index ["slug"], name: "index_websites_on_slug", unique: true
     t.index ["theme_id"], name: "index_websites_on_theme_id"
     t.index ["user_id"], name: "index_websites_on_user_id"
