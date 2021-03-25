@@ -1,6 +1,9 @@
 import { Controller } from "stimulus"
 
+
 export default class extends Controller {
+  static targets = ['label']
+
   updatePreview(event, imageUrl){
     const inputType = event.target.dataset.inputType
     const previewTarget = event.target.dataset.previewTarget
@@ -47,6 +50,8 @@ export default class extends Controller {
         this.updatePreview(event, e.currentTarget.result)
       }
       reader.readAsDataURL(input.files[0])
+      this.labelTarget.innerText = input.files[0].name
+      this.labelTarget.classList.add("uploaded")
     }
   }
 }

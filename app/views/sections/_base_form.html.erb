@@ -9,8 +9,7 @@
       <% if section.elements[p.index].category == "img" %>
         <p class="font-weight-bold"><%= section.elements[p.index].name %></p>
         <div class="d-flex justify-content-between w-100" data-controller="upload">
-          <%= p.input :photo, as: :file, label_html: {class: "w-100"}, input_html: { class: 'hidden', id: 'photo-input', data: {action: 'change->preview#getImageUrl', 'input-type': 'image', "preview-target": "data-preview-#{section.elements[p.index].name.downcase}"} }, label_html: { class: 'upload-photo'}, label: "Choose file" %>
-          <%= image_tag "",  class: "hidden", id: "photo-preview", data: {target: 'upload.image'} %>
+          <%= p.input :photo, as: :file, input_html: { class: 'hidden', id: 'photo-input', data: {action: 'change->preview#getImageUrl', 'input-type': 'image', "preview-target": "data-preview-#{section.elements[p.index].name.downcase}"} }, label_html: { class: 'upload-photo w-100', data: {target: 'preview.label'}}, label: "Choose file" %>        
         </div>
       <% else %>
         <%= p.input :value, as: section.elements[p.index].category.to_sym == :list ? :text : :string, label: section.elements[p.index].label, 

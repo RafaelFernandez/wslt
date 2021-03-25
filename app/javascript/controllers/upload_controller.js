@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ['image']
+  static targets = ['image', 'label']
 
   displayPreview(event) {
     const input = event.target
@@ -13,6 +13,8 @@ export default class extends Controller {
       }
       reader.readAsDataURL(input.files[0])
       this.imageTarget.classList.remove('hidden');
+
+      this.labelTarget.text = input.files[0];
     }
   }
 }

@@ -9,6 +9,11 @@
   border-radius: 2px;
   position: relative;
   color: #E5E5E5;
+  &.uploaded {
+    color: #495057;
+    font-size: 14px;
+    font-weight: normal !important;
+  }
 
   &::after {
     content: "Browse";

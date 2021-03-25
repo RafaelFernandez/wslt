@@ -25,7 +25,9 @@ class Section < ApplicationRecord
       section&.element_named(element_name, hash_key)
     else
       # return default content
-      SECTION_CONFIG[section_name.downcase.tr_s(" ", "_").to_sym][:default][element_name.downcase.tr_s(" ", "_").to_sym]
+      element = SECTION_CONFIG[section_name.downcase.tr_s(" ", "_").to_sym][:default][element_name.downcase.tr_s(" ", "_").to_sym]
+      element = element[hash_key] unless hash_key.nil?
+      element
     end
   end
 end

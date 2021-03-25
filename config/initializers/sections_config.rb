@@ -46,8 +46,8 @@ SECTION_CONFIG = {
     default: {
       teaser: "Book 10+ hours and get 5% off",
       policy: "Group classes are for a max of 2 students online and 6 people in person \n Gotcha?",
-      product1: {type: 'one 2 one', offline_price: '20 Eur', online_price: '10 Eur'},
-      product2: {type: 'one 2 one', offline_price: '20 Eur', online_price: '10 Eur'}
+      product1: {'type' => 'one 2 one', 'offline_price' => '20 Eur', 'online_price' => '10 Eur'},
+      product2: {'type' => 'one 2 one', 'offline_price' => '20 Eur', 'online_price' => '10 Eur'}
     }
   },
 
