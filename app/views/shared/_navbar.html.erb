@@ -2,9 +2,17 @@
 
   <div>
     <div class="logo navbar-lewagon">
-      <%= link_to "/", class: "navbar-brand" do %>
-        <i class="fas fa-feather-alt"></i>
-        Hubbly
+      <% if action_name == 'home' %>
+        <%= link_to "/", class: "navbar-brand-white" do %>
+          <i class="fas fa-feather-alt"></i>
+          Hubbly
+        <% end %>
+      <% end %>
+      <% if action_name != 'home' %>
+        <%= link_to "/", class: "navbar-brand" do %>
+          <i class="fas fa-feather-alt"></i>
+          Hubbly
+        <% end %>
       <% end %>
     </div>
 
