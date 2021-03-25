@@ -12,7 +12,7 @@
 }
 
 .bio-right{
-  flex-grow:1;
+  flex-grow: 1;
 }
 
 .catchy-info-right {
@@ -54,10 +54,11 @@
 }
 
 .pricing-bottom{
-  p{
+  li {
     font-family: 'Roboto';
     font-size: 18px;
     color: rgba(0, 0, 0, 0.6);
+    list-style: none;
   }  
 }
 
@@ -65,4 +66,54 @@
   margin: 30px auto 30px auto;
   justify-content: space-between;
   width: 80%;
+}
+
+.contact{
+  background: #302326;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 160px;
+  padding: 0px 50px;
+  color: #E5F6FE;
+  margin-top: 14vh;
+  width: 100%;
+    h2{
+      font-family: 'Caveat', cursive;
+      font-size: 32px;
+      color: #FFCF57;
+    }
+}
+
+.contact-right {
+  display: flex;
+  align-items: center;
+}
+.contact-right a {
+  color: #FAEADD;
+  opacity: 0.8;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0px 10px;
+}
+.contact-right a:hover {
+  color: #FFCF57;
+  opacity: 1;
+}
+
+.contact-left a {
+  font-size: 18px;
+  padding-right: 40px;
+  display: flex;
+  align-items: center;
+  opacity: 0.8;
+  color: #FAEADD;
+  text-decoration: none;
+  background-color: transparent;
+  font-family: 'Roboto';
+}
+
+.contact-left a:hover {
+  color: #FFCF57;
+  opacity: 1;
 }
