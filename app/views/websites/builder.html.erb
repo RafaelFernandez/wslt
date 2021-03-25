@@ -38,9 +38,7 @@
       </div>
     </div>
 
-
-
-    <div id="accordion" class = "stickytop mt-3">    
+    <div id="accordion" class = "stickytop pt-3">    
       <% SECTION_CONFIG.keys.each do |section_name| %>
         <% current_section = @sections_map[section_name]%>
 
@@ -65,13 +63,30 @@
           </div>
       <% end %>
 
-
-    <!-- Button trigger modal -->
+      <!-- Button trigger modal -->
       <button type="button" class="btn-form" data-toggle="modal" data-target="#exampleModal">
         + Add Content
       </button>
+     
+      <% if @website.published %>
+        <div class="pt-3">
+          <%= link_to 'Go to website', website_path(@website), target: '_blank', class: 'btn btn-primary' %>
+        </div>        
+      <% else %>
+        <%= simple_form_for @website do |f| %>
+          <%= f.input :name, as: :hidden, input_html: { value: @website.name } %>        
+          <%= f.input :domain, as: :hidden, input_html: { value: @website.domain } %>
+          <%= f.input :theme_id, as: :hidden, input_html: { value: @website.theme_id } %>
+          <%= f.input :published, as: :hidden, input_html: { value: true } %>
+          
+          <%= f.button :submit, value: 'Publish', class: 'btn btn-primary' %>
+        <% end %>
+      <% end %>
+      
       </div>
+
   </div>
+
   <div class="container col-12 col-md-8 mr-0">
      <div class="col">
       <div>
