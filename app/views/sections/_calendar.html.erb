@@ -1,4 +1,4 @@
-<div class="calendar text-center pt-5 <%= 'is-hidden' if @section_calendar.id.nil? %>" id="preview_calendar">
+<div class="calendar text-center pt-5 <%= 'is-hidden' if section&.id.nil? %>" id="preview_calendar">
   <h2 data-preview-headline><%= Section.get_content_of(section, "calendar", "headline") %></h2>
   <p data-preview-subheadline><%= Section.get_content_of(section, "calendar", "subheadline") %></p>
   

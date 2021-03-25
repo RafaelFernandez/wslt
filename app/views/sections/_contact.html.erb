@@ -1,4 +1,4 @@
-<div class="d-flex pt-5 <%= 'is-hidden' if @section_contact&.id.nil? %>" id="preview_contact">
+<div class="d-flex pt-5 <%= 'is-hidden' if section&.id.nil? %>" id="preview_contact">
 
   <a data-preview-email href="mailto:<%= Section.get_content_of(section, "contact", "email") %>">
     <i class="far fa-envelope-open"></i>
