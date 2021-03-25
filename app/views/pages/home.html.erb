@@ -3,8 +3,9 @@
       <h1>Find new students & grow your business</h1>
       <p class="my-2">Websites for language teachers</p>
       <div class="mt-2">
-        <a class="btn-primary" href="">Make my website</a>
-        <a class="btn-secondary" href="">Tell me more</a>
+        <a class="btn-primary" href="<%= new_website_path %>">Make my free website</a>
+        
+        <a class="btn-secondary" href="<%= root_path(anchor: "tell_more") %>">Tell me more</a>
       </div>
     </div>
 </header>
@@ -19,13 +20,16 @@
       <iframe width="100%" height="315" src="https://www.youtube.com/embed/zRHimYPyRL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
+    <span id="tell_more"></span>
 </section>
 
 <section class="hubbly-pink">
 
   <div class="container">
-    <h1 class="text-center my-5">Why Websites for Language Teachers</h1>
-    <div class="cards justify-content-center mt-3">
+
+    <h1 class="text-center my-5">Why hubbly ?</h1>
+    <div class="cards mt-3">
+
       <div class="card p-3 text-center">
         <%= image_tag "browser.png", alt: "Why a website" %>
         <h3 class="mt-3">Why a website</h3>
@@ -54,21 +58,13 @@
       <h3 class="text-center my-3">Pick your favourite style from our templates below</h3>
       <p class="text-center mb-5">Our websites use the best UI/UX design to help you achieve the highest possible conversion rate and book new students</p>
       <div class="cards-scrolls justify-content-between">
-        <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1589995635011-078e0bb91d11?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=890&q=80);">
-          <span class="tag">Business</span>
-        </div>
 
-        <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1589995635011-078e0bb91d11?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=890&q=80);">
-          <span class="tag">One-2-one</span>
+      <% @websites.each do |website| %>
+        <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.1)), url(<%= cl_image_path website.photo.key, height: 300, crop: :fill %>);">
+          <span class="tag"><%= website.name %></span>
         </div>
+      <% end %>
 
-        <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1589995635011-078e0bb91d11?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=890&q=80);">
-          <span class="tag">Group</span>
-        </div>
-
-        <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1589995635011-078e0bb91d11?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=890&q=80);">
-          <span class="tag">Business</span>
-        </div>
       </div>
     </div>
   </div>

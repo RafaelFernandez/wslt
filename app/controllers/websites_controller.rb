@@ -13,7 +13,9 @@ class WebsitesController < ApplicationController
     @website = Website.new
     @website.build_theme
     authorize @website
+    @themes = Theme.pluck(:name, :id)
   end
+
 
   def create
     @website = Website.new(website_params)
