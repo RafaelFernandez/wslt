@@ -8,6 +8,9 @@ class Website < ApplicationRecord
   has_many :sections, dependent: :destroy
   validates :domain, inclusion: { in: DOMAIN_OPTIONS }
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   def section_named(name)
     sections&.find_by(name: name)
   end

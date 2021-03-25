@@ -29,7 +29,7 @@ class WebsitesController < ApplicationController
   end
 
   def show
-    @website = Website.find(params[:id])
+    @website = Website.friendly.find(params[:id])
     authorize @website
     render layout: @website.theme.name
   end
