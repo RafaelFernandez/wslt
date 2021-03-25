@@ -11,10 +11,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body data-controller="<%= 'navbar' if action_name == "home" %>">
+  <body class="position-relative" data-controller="<%= 'navbar' if action_name == "home" %>">
   
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    
     <main>
       <%= yield %>
     </main>
