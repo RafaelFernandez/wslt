@@ -8,7 +8,7 @@ class Section < ApplicationRecord
     SECTION_CONFIG[self.name.downcase.to_sym][:elements]
   end
 
-  def element_named(name, hash_key)
+  def element_named(name, hash_key = nil)
     element = elements&.find_by(name: name)
     unless element.nil?
       return element.category.to_sym == :product ? eval(element.value)[hash_key] : element.value

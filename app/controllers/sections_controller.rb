@@ -41,6 +41,6 @@ class SectionsController < ApplicationController
         v[:value] = v[:value].to_s
       end
     end
-    params.require(:section).permit(:name, elements_attributes: [:name, :value, :category, :photo])
+    params.require(:section).permit(:name, elements_attributes: [:name, :value, :category, :photo, :label])
   end
 end

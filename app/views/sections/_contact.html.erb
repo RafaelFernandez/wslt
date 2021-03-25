@@ -18,9 +18,11 @@
  <%#= Contact right social media %>
     <div class="contact-right">
       
+      <%# unless section.element_named("facebook").empty? To make the icons appear or disappear but need js%>
       <a data-preview-facebook href="<%= Section.get_content_of(section, "contact", "facebook") %>">
         <i class="fab fa-facebook-f"></i>
       </a>
+      <%# end %>
 
       <a data-preview-instagram href="<%= Section.get_content_of(section, "contact", "instagram") %>">
         <i class="fab fa-instagram"></i>
