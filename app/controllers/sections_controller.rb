@@ -7,14 +7,14 @@ class SectionsController < ApplicationController
 
   def new
     @section = Section.new(name: params[:section])
-    @website = Website.find(params[:website_id])
+    @website = Website.friendly.find(params[:website_id])
     @section.website = @website
     @section.elements.build(@section.get_elements)
   end
 
   def create
     @section = Section.new(section_params)
-    @website = Website.find(params[:website_id])
+    @website = Website.friendly.find(params[:website_id])
     @section.website = @website
     if @section.save
       redirect_to website_builder_path(@website)
@@ -36,7 +36,7 @@ class SectionsController < ApplicationController
 
   def section_params
 
-    params[:section][:elements_attributes].each do |k, v| 
+    params[:section][:elements_attributes].each do |k, v|
       if v[:category] == 'product'
         v[:value] = v[:value].to_s
       end

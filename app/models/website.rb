@@ -2,7 +2,7 @@ require "open-uri"
 
 class Website < ApplicationRecord
   DOMAIN_OPTIONS = ['englishlanguageteacher.com', 'spanishlanguageteacher.com']
-
+  # THEMES = ['younglearners', 'business', 'general', 'examspreparation']
 
   belongs_to :user
   belongs_to :theme, optional: true
@@ -16,6 +16,9 @@ class Website < ApplicationRecord
     file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign1.png")
     self.photo.attach(io: file, filename: 'default-img.png', content_type: 'image/png')
   end
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
   def section_named(name)
     sections&.find_by(name: name)

@@ -1,5 +1,4 @@
 class WebsitesController < ApplicationController
-  # before_action :set_website, only: [:show, :bulider]
   include Pundit
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
@@ -31,7 +30,7 @@ class WebsitesController < ApplicationController
   end
 
   def show
-    @website = Website.find(params[:id])
+    @website = Website.friendly.find(params[:id])
     authorize @website
     render layout: @website.theme.name
   end
@@ -45,12 +44,12 @@ class WebsitesController < ApplicationController
   end
 
   def edit
-    @website = Website.find(params[:id])
+    @website = Website.friendly.find(params[:id])
     authorize @website
   end
 
   def builder
-    @website = Website.find(params[:website_id])
+    @website = Website.friendly.find(params[:website_id])
     @sections = @website.sections
 
     @section_hero = @sections.find_by(name: "hero") || Section.new(name: "hero")
@@ -90,11 +89,6 @@ class WebsitesController < ApplicationController
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
-  end
-
-  def set_website
-    # @website = Website.find(params[:id])
-    # authorize @website
   end
 
   def website_params

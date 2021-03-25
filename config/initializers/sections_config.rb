@@ -39,7 +39,7 @@ SECTION_CONFIG = {
   pricing: {
     elements: [
       {name: 'teaser', category: :h2, label: "Do you offer a discount?"},
-      {name: 'policy', category: :list, label: "Is your price per student per hour?"},
+      {name: 'policy', category: :list, label: "Do you have particular policies for your classes?"},
       {name: 'product1', category: :product, label: "One-to-one classes"},
       {name: 'product2', category: :product, label: "Group classes"},
     ],

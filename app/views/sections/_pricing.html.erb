@@ -1,5 +1,5 @@
 <!-- Pricing top div -->
-<div class="<%= 'is-hidden' if @section_pricing&.id.nil? %>" id="preview_pricing">
+<div class="<%= 'is-hidden' if section&.id.nil? %>" id="preview_pricing">
   <div class="pricing-top d-flex flex-column justify-content-center text-center pt-5">
     <h2>Pricing</h2>
     <h3 data-preview-teaser><%= Section.get_content_of(section, "pricing", "teaser") %></h3>

@@ -1,0 +1,5 @@
+meta_product_name: "Hubbly"
+meta_title: "Websites for Language Teachers"
+meta_description: "Find new students and grow your business"
+meta_image: "hubbly.jpeg" # should exist in `app/assets/images/`
+twitter_account: "www.twitter.com/HubblyPoppy"   # required for Twitter Cards

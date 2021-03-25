@@ -27,6 +27,7 @@ poppysworld = Website.create!(
 poppysworld.photo.attach(io: file, filename: 'poppy.png', content_type: 'image/png')
 
 # Website
+
 web_names = ["Young Learners", "mindfuldness", "Business", "History", "Nature", "Most Toughest Languages"]
  
   puts "Creating Poppy Seeds"
