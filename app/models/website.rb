@@ -1,6 +1,6 @@
 class Website < ApplicationRecord
   DOMAIN_OPTIONS = ['englishlanguageteacher.com', 'spanishlanguageteacher.com']
-  THEMES = ['kids']
+  THEMES = ['younglearners', 'business', 'general', 'examspreparation']
 
   belongs_to :user
   belongs_to :theme, optional: true
