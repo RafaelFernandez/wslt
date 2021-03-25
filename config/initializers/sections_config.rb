@@ -27,7 +27,7 @@ SECTION_CONFIG = {
 
   catchy: {
     elements: [
-      {name: 'interesting', category: :list, label: "Tell us 5 interesting things about you"},
+      {name: 'interesting', category: :list, label: "Tell us 5 great selling points about you"},
       {name: 'video', category: :video, label: "Upload an intro video"}
     ],
     default: {
@@ -39,13 +39,13 @@ SECTION_CONFIG = {
   pricing: {
     elements: [
       {name: 'teaser', category: :h2, label: "Do you offer a discount?"},
-      {name: 'policy', category: :list, label: "Do you have particular policies for your classes?"},
+      {name: 'policy', category: :list, label: "Do you have particular policies for your classes? One per line"},
       {name: 'product1', category: :product, label: "One-to-one classes"},
       {name: 'product2', category: :product, label: "Group classes"},
     ],
     default: {
       teaser: "Book 10+ hours and get 5% off",
-      policy: "Group classes are for a max of 2 students online and 6 people in person \n Gotcha?",
+      policy: "Group classes are for a max of \n 2 students online \n 6 people in person",
       product1: {'type' => 'one 2 one', 'offline_price' => '20 Eur', 'online_price' => '10 Eur'},
       product2: {'type' => 'one 2 one', 'offline_price' => '20 Eur', 'online_price' => '10 Eur'}
     }
@@ -77,12 +77,12 @@ SECTION_CONFIG = {
       {name: "whatsapp", category: :phone_number, label: "WhatsApp"},
     ],
     default: {
-      email:"rachel@gmail.com",
+      email:"name@gmail.com",
       phone: "+34-123-123456",
-      facebook: "https://www.facebook.com/truonganxinh",
-      instagram: "https://instagram.com/mirandakerr?igshid=i8lvpcvwmmmi",
-      twitter: "https://twitter.com/HubblyPoppy",
-      linkedin: "https://www.linkedin.com/in/lutfur84/",
+      facebook: "https://www.facebook.com",
+      instagram: "https://instagram.com",
+      twitter: "https://twitter.com",
+      linkedin: "https://www.linkedin.com",
       whatsapp: "+34-123-123456"
     }
   }

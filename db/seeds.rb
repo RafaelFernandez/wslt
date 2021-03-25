@@ -9,18 +9,21 @@ user = User.create(first_name: 'John', last_name: 'Doe', email: 'j@gmail.com', p
 
 Theme.create(name: 'dudu')
 Theme.create(name: 'default')
-kids = Theme.create(name: 'kids')
+younglearners = Theme.create(name: 'younglearners')
+business = Theme.create(name: 'business')
+general = Theme.create(name: 'general')
+examspreparation = Theme.create(name: 'examspreparation')
 
 poppy = User.create!(email: "poppy@poppyworld.com", password: "password", first_name: "Poppy", last_name: "World")
 
 poppysworld = Website.create!(
   name: "Poppy's World",
   domain: "englishlanguageteacher.com",
-  user: poppy, theme: kids
+  user: poppy, theme: younglearners
 )
 
 # Website
-website = Website.create(user: user, theme: kids, name: 'My web', domain: 'englishlanguageteacher.com')
+website = Website.create(user: user, theme: younglearners, name: 'My web', domain: 'englishlanguageteacher.com')
 # HERO SECTION
 hero = Section.create( name: 'hero', order: 1, website: poppysworld)
 Element.create(name: 'title', value: 'RACHEL POTTER', category: :h1, section: hero)

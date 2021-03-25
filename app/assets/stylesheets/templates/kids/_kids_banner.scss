@@ -24,7 +24,7 @@
       font-size: 75px;
       font-weight: 900;
       z-index: 5;
-      background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+      background-image: linear-gradient(to left, #8FCDD4, #FF5757, #FFCF57, #DB7558, #F6A6B6, #8FCDD4, #FF5757);   -webkit-background-clip: text;
       color: transparent;
     }
 
@@ -32,7 +32,7 @@
       font-family: 'Caveat', cursive;
       font-size: 32px;
       z-index: 5;
-      color:  rgba(255, 255, 255, 0.7);
+      color:  rgba(255, 255, 255, 1);
     }
 
     p {
