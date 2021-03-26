@@ -52,25 +52,25 @@ web_names = ["Young Learners", "mindfuldness", "Business", "History", "Nature", 
   website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
   puts "Creating Rachel seeds"
-  file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign1.png")
-  website = Website.create(user: rachel, theme: younglearners, name: "Young Learners" , domain: 'englishlanguageteacher.com')
-  website.photo.attach(io: file, filename: 'ynes.png', content_type: 'image/png')
+  # file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign1.png")
+  # website = Website.create(user: rachel, theme: younglearners, name: "Young Learners" , domain: 'englishlanguageteacher.com')
+  # website.photo.attach(io: file, filename: 'ynes.png', content_type: 'image/png')
 
-  file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign3.png")
-  website = Website.create(user: rachel, theme: general, name: "Nature", domain: 'englishlanguageteacher.com')
-  website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+   file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign3.png")
+   website = Website.create(user: rachel, theme: general, name: "Nature", domain: 'englishlanguageteacher.com')
+   website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-  file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign10.png")
-  website = Website.create(user: rachel, theme: business, name: "Business", domain: 'englishlanguageteacher.com')
-  website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+#  file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign10.png")
+#  website = Website.create(user: rachel, theme: business, name: "Business", domain: 'englishlanguageteacher.com')
+#  website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
   file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign5.png")
   website = Website.create(user: rachel, theme: business, name: "Business", domain: 'englishlanguageteacher.com')
   website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-  file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign4.png")
-  website = Website.create(user: rachel, theme: business, name: "Business", domain: 'englishlanguageteacher.com')
-  website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+#  file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign4.png")
+#  website = Website.create(user: rachel, theme: business, name: "Business", domain: 'englishlanguageteacher.com')
+#  website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 # HERO SECTION
 hero = Section.create( name: 'hero', order: 1, website: poppysworld)
