@@ -4,6 +4,7 @@
       <p data-preview-intro><%= Section.get_content_of(section, "Bio", "intro") %></p>
   </div>
   <div class="bio-right">
-      <img data-preview-picture src="<%= Section.get_content_of(section, "Bio", "Picture") %>" alt="" class="hubbly-large">
+      <% img_url = cl_image_path(Section.get_content_of(section, "Bio", "picture")) %>
+      <img data-preview-picture src= '<%= img_url %>' alt="" class="hubbly-large">
   </div>
 </div>

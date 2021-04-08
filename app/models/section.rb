@@ -11,9 +11,15 @@ class Section < ApplicationRecord
   def element_named(name, hash_key = nil)
     element = elements&.find_by(name: name)
     unless element.nil?
-      return element.category.to_sym == :product ? eval(element.value)[hash_key] : element.value
+      case element.category.to_sym
+      when :product
+        return eval(element.value)[hash_key]
+      when :img
+        return element.photo.key.nil? ? element.value : element.photo.key
+      else
+        return element.value
+      end
     end
-
     nil
   end
 
@@ -31,3 +37,4 @@ class Section < ApplicationRecord
     end
   end
 end
+
