@@ -9,10 +9,9 @@ main {
 
   section.hubbly-blue {
     background-image: url("hubbly_blue.png");
-    // background-position: inherit;
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 50px 0px;
+    // padding: 50px 0px;
   }
 
   section p {
@@ -36,5 +35,41 @@ main {
 
   a:hover {
     text-decoration: none;
+  }
+
+// POPPY SCSS
+
+  .what-is-hubbly {
+    display: flex;
+    padding: 5% 0 5% 0;
+    align-items: center;
+  }
+
+  .wih-content {
+    width: 50%;
+    padding-right: 5%;
+  }
+
+  .wih-video {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 600px) {
+    .what-is-hubbly {
+      flex-direction: column;
+      padding: 5%;
+    }
+    .wih-content {
+      width: 100%;
+      padding-right: 0%;
+    }
+    .wih-video {
+      width: 100%;
+    }
+  }
+
+  .why-hubbly h1, .website-templates h1, .website-templates h3, .website-templates p {
+    text-align: center;
+    padding: 2% 0%;
   }
 }
