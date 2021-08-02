@@ -7,69 +7,67 @@ Website.destroy_all
 Theme.destroy_all
 User.destroy_all
 
-Theme.create(name: 'dudu')
-Theme.create(name: 'default')
-younglearners = Theme.create(name: 'younglearners')
-business = Theme.create(name: 'business')
-general = Theme.create(name: 'general')
-examspreparation = Theme.create(name: 'examspreparation')
+## WEBSITE TEMPLATES ##
+# Theme.create(name: 'dudu')
+# Theme.create(name: 'default')
+younglearners = Theme.create(name: 'Young learners')
+business = Theme.create(name: 'Business - Coming soon!')
+general = Theme.create(name: 'General - Coming soon!')
+examspreparation = Theme.create(name: 'Exam preparation - Coming soon!')
 
+## USERS ##
 poppy = User.create!(email: "poppy@poppyworld.com", password: "password", first_name: "Poppy", last_name: "World")
 rachel = User.create!(email: "rachel@potter.com", password: "password", first_name: "Rachel", last_name: "Potter")
 admin = User.create!(email: "admin@admin.com", password: "password", first_name: "Admin", last_name: "Istrative", admin: true)
+
 
 file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign10.png")
 poppysworld = Website.create!(
   name: "Poppy's World",
   domain: "englishlanguageteacher.com",
-  user: poppy, theme: younglearners
+  user: poppy, 
+  theme: younglearners
 )
+
 poppysworld.photo.attach(io: file, filename: 'poppy.png', content_type: 'image/png')
 
 # Website
 
 web_names = ["Young Learners", "mindfuldness", "Business", "History", "Nature", "Most Toughest Languages"]
  
-  puts "Creating Poppy Seeds"
-  file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign2.png")
-  website = Website.create(user: poppy, theme: general, name: "Mindfullness", domain: 'englishlanguageteacher.com')
-  website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  # puts "Creating Poppy Seeds"
+  # file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign2.png")
+  # website = Website.create(user: poppy, theme: general, name: "Mindfullness", domain: 'englishlanguageteacher.com')
+  # website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-  file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign6.png")
-  website = Website.create(user: poppy, theme: general, name: "Toughest Languages", domain: 'englishlanguageteacher.com')
-  website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  # file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign6.png")
+  # website = Website.create(user: poppy, theme: general, name: "Toughest Languages", domain: 'englishlanguageteacher.com')
+  # website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-  file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign7.png")
-  website = Website.create(user: poppy, theme: general, name: "Toughest Languages", domain: 'englishlanguageteacher.com')
-  website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  # file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign7.png")
+  # website = Website.create(user: poppy, theme: general, name: "Toughest Languages", domain: 'englishlanguageteacher.com')
+  # website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-  file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign8.png")
-  website = Website.create(user: poppy, theme: general, name: "Young Learners", domain: 'englishlanguageteacher.com')
-  website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  # file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign8.png")
+  # website = Website.create(user: poppy, theme: general, name: "Young Learners", domain: 'englishlanguageteacher.com')
+  # website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-  file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign9.png")
-  website = Website.create(user: poppy, theme: general, name: "History & Languages", domain: 'englishlanguageteacher.com')
-  website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  # file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign9.png")
+  # website = Website.create(user: poppy, theme: general, name: "History & Languages", domain: 'englishlanguageteacher.com')
+  # website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
   puts "Creating Rachel seeds"
-  file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign1.png")
-  website = Website.create(user: rachel, theme: younglearners, name: "Young Learners" , domain: 'englishlanguageteacher.com')
-  website.photo.attach(io: file, filename: 'ynes.png', content_type: 'image/png')
 
-  file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign3.png")
-  website = Website.create(user: rachel, theme: general, name: "Nature", domain: 'englishlanguageteacher.com')
+  file = URI.open("https://res.cloudinary.com/dwsfhweeg/image/upload/v1627825000/Hubbly/Template_-_Young_learners_svotb0.png")
+  website = Website.create(user: rachel, theme: younglearners, name: "Young learners", domain: 'englishlanguageteacher.com')
   website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-  file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign10.png")
+  file = URI.open("https://res.cloudinary.com/dwsfhweeg/image/upload/v1627824935/Hubbly/Template_-_Business_wytx6f.png")
   website = Website.create(user: rachel, theme: business, name: "Business", domain: 'englishlanguageteacher.com')
   website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-  file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign5.png")
-  website = Website.create(user: rachel, theme: business, name: "Business", domain: 'englishlanguageteacher.com')
-  website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-
-  file = URI.open("https://euroamerican.dk/photo/wslt/tempdesign4.png")
-  website = Website.create(user: rachel, theme: business, name: "Business", domain: 'englishlanguageteacher.com')
+  file = URI.open("https://res.cloudinary.com/dwsfhweeg/image/upload/v1627824935/Hubbly/Template_-_Tech_executives_gytmix.png")
+  website = Website.create(user: rachel, theme: general, name: "Tech execs", domain: 'englishlanguageteacher.com')
   website.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 # HERO SECTION

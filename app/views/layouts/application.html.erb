@@ -30,10 +30,11 @@
     <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
     <meta name="twitter:image:src" content="<%= meta_image %>">
 <!-- favicon is set -->
-    <%= favicon_link_tag %>
+    <%#= favicon_link_tag %>
   </head>
 
-  <body class="position-relative" data-controller="<%= 'navbar' if action_name == "home" %>">
+  <%# <body class="position-relative" data-controller="<%= 'navbar' if action_name == "home" %>
+    <body data-controller="<%= 'navbar' if action_name == "home" %>">
 
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
