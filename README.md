@@ -2,7 +2,7 @@
 
 [Hubbly](https://github.com/RafaelFernandez/wslt)  
 [Tech Stack](#tech-stack)  
-[Running Hubbly](#running-wslt)  
+[Running Hubbly](#running-hubbly)  
 [Developers Team](#developers-team)  
 [Contributors](#contributors-✨)
 
