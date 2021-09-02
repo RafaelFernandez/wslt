@@ -26,7 +26,7 @@ Once you're logged in start by selecting a specific template - then you would be
 
 ## Teaser:
 <p align="center">
- <img src="./readmeFiles/screen1.png" alt="localife logo" width="600px;" >
+ <img src="./readmeFiles/screen1.png" alt="localife logo" width="700px;" >
 </p>
 
 ## Tech Stack
